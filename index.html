@@ -129,61 +129,129 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 .step{background:#fff;border:1px solid #EBDDBE;border-top:3px solid var(--gold);border-radius:14px;padding:16px;box-shadow:0 6px 16px rgba(92,31,20,.08)}
 .step b{color:var(--maroon)}
 .trustrow{font-size:13.5px;color:#5C4633;margin-top:8px}
+
+#stickyBar{position:fixed;left:0;right:0;bottom:0;z-index:65;background:#FFFBF3;border-top:1.5px solid var(--gold);box-shadow:0 -6px 20px rgba(92,31,20,.14);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+#stickyBar[hidden]{display:none}
+#sbText{font-weight:700;color:#5C1F14;font-size:15px}
+#sbBtn{background:linear-gradient(135deg,#F97316,#EA580C);color:#fff;border:0;border-radius:12px;padding:12px 18px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 8px 18px rgba(234,88,12,.35)}
+@media(min-width:900px){#stickyBar{left:auto;right:22px;bottom:22px;width:350px;border:1.5px solid var(--gold);border-radius:16px;box-shadow:0 16px 34px rgba(92,31,20,.22)}}
+.addwrap{display:inline-flex;align-items:center;gap:8px}
+.stepper{display:inline-flex;align-items:center;gap:4px;background:#FFF3DC;border:1.5px solid var(--gold);border-radius:999px;padding:2px 5px}
+.stepper[hidden]{display:none}
+.stepper .sqv{min-width:20px;text-align:center;color:#5C1F14}
+.trustline{font-size:12.5px;color:#15803D;margin-top:8px;font-weight:600}
+.costep{color:#5C1F14;font-size:17px;margin:4px 0 10px}
+#detailsView label,#payView label{display:block;font-size:13.5px;color:#5C4633;margin-top:9px;font-weight:600}
+#detailsView input,#detailsView textarea,#payView input{width:100%;margin-top:4px;padding:10px;border:1.5px solid #E3D3AC;border-radius:10px;background:#fff;font-size:15px;color:#3D2C22;box-sizing:border-box}
+.mtoggle{display:flex;gap:8px;margin-top:12px}
+.mtog{flex:1;padding:11px;border-radius:12px;border:1.5px solid #E3D3AC;background:#fff;font-weight:700;color:#5C4633;cursor:pointer;font-size:14.5px}
+.mtog.on{background:linear-gradient(135deg,#F97316,#EA580C);color:#fff;border-color:#EA580C}
+.sumb{background:#FFF3DC;border:1px solid #EBD9A8;border-radius:12px;padding:10px 12px;margin-top:10px}
+.procstrip{font-size:12px;color:#7A4A21;text-align:center;margin-top:10px;line-height:1.6}
+.succTick{width:64px;height:64px;border-radius:50%;background:#15803D;color:#fff;font-size:34px;line-height:64px;margin:10px auto;text-align:center;box-shadow:0 10px 22px rgba(21,128,61,.35)}
+.procsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.pstep{background:#fff;border:1.5px solid #EBD9A8;border-radius:14px;padding:12px;box-shadow:0 8px 18px rgba(92,31,20,.08)}
+.pstep .n{display:inline-block;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#F97316,#EA580C);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:14px}
+.pstep b{display:block;color:#5C1F14;margin:7px 0 4px;font-size:15px}
+.pstep p{font-size:13.5px;color:#5C4633}
+.slimsteps{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12px;color:#7A4A21;margin-top:8px}
+.slimsteps span{background:#FFF3DC;border:1px solid #EBD9A8;border-radius:999px;padding:3px 8px;font-weight:600}
+.truststrip{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.truststrip span{background:#fff;border:1.5px solid #BFE3CD;color:#14532D;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;box-shadow:0 5px 12px rgba(21,128,61,.10)}
 </style></head><body>
 <div class="draftbar" style="background:#FFF3DC;color:#5C1F14;border-bottom:1px solid #C9A227">COD Available · Up to 10% OFF on prepaid orders · Free guidance by email</div>
 <header><a class="logo" href="/index.html">RUDRA SACRED</a>
 <nav><a href="/shop/index.html">Shop</a><a href="/blog/index.html">Blog</a><a href="/credit/index.html">Astro Credit</a><a href="/contact/index.html">Contact</a></nav></header>
 <div class="hero"><div class="wrap"><h1>Sacred objects, honestly described.</h1>
 <p>Malas, rudraksha, crystals and traditional puja essentials — with the contents listed on each product page, clear policies and no outcome promises.</p>
-<div class="herocta"><a class="btn" href="/shop/index.html">Shop the collection</a><a class="btn btn-mail" href="mailto:sacredrudra@gmail.com?subject=Help%20choosing%20a%20rudraksha%20or%20mala">Free guidance by email</a></div>
+<div class="herocta"><a class="btn" href="/shop/index.html">Shop the collection</a><a class="btn btn-mail" href="#how-ordering">How ordering works</a></div>
+<p class="trustline">&#10003; COD Available &middot; &#10003; GST invoice with every order &middot; &#10003; Tracking on every order</p>
 <div class="chips"><span class="chip">GST-registered business</span><span class="chip">Ships across India</span><span class="chip">Secure UPI payments</span><span class="chip">Tracking on every order</span><span class="chip">Prepaid savings up to 10%</span></div>
 <div class="scene"><div class="card3d"><span class="tag">LAUNCH COLLECTION</span>
 <h2 style="color:#5C1F14;margin-top:12px">Start with the launch collection</h2>
 <p style="color:#5C4633">The Laxmi Kuber Pujan Box, the Dhan Yog bracelet family, sphatik and rudraksha malas, and the Rose Quartz love collection.</p><span class="chip3d">62 products · 10 collections</span></div></div></div></div>
-<div class="wrap"><section><h2 class="sec">Shop by collection</h2><div class="tiles"><a class="tile" href="/collections/wealth-prosperity/index.html">Wealth & Prosperity</a><a class="tile" href="/collections/malas-rudraksha/index.html">Malas & Rudraksha</a><a class="tile" href="/collections/chakra-energy/index.html">Chakra & Energy</a><a class="tile" href="/collections/puja-vastu/index.html">Puja & Vastu</a><a class="tile" href="/collections/love-collection/index.html">Love Collection — Rose Quartz</a><a class="tile" href="/collections/bracelets/index.html">Bracelets</a><a class="tile" href="/collections/crystal-bracelets/index.html">Crystal Bracelets</a><a class="tile" href="/collections/rudraksha/index.html">Rudraksha — By Mukhi</a><a class="tile" href="/collections/karungali/index.html">Karungali</a><a class="tile" href="/collections/protection/index.html">Protection — Nazar & Evil Eye</a></div></section>
+<div class="wrap"><section><div class="truststrip"><span>&#10003; GST invoice with every order</span><span>&#10003; Tracking on every order</span><span>&#10003; Payment verified before dispatch</span><span>&#10003; COD Available</span></div></section>
+<section><h2 class="sec">Shop by collection</h2><div class="tiles"><a class="tile" href="/collections/wealth-prosperity/index.html">Wealth & Prosperity</a><a class="tile" href="/collections/malas-rudraksha/index.html">Malas & Rudraksha</a><a class="tile" href="/collections/chakra-energy/index.html">Chakra & Energy</a><a class="tile" href="/collections/puja-vastu/index.html">Puja & Vastu</a><a class="tile" href="/collections/love-collection/index.html">Love Collection — Rose Quartz</a><a class="tile" href="/collections/bracelets/index.html">Bracelets</a><a class="tile" href="/collections/crystal-bracelets/index.html">Crystal Bracelets</a><a class="tile" href="/collections/rudraksha/index.html">Rudraksha — By Mukhi</a><a class="tile" href="/collections/karungali/index.html">Karungali</a><a class="tile" href="/collections/protection/index.html">Protection — Nazar & Evil Eye</a></div></section>
 <section><h2 class="sec">Bestsellers — signature products</h2><div class="grid"><div class="pcard"><div class="phimg"><img src="/images/pujan-box.jpg" alt="Diwali Special Laxmi Kuber Pujan Box" loading="lazy"></div><div class="phcap">Product photo — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Diwali Special Laxmi Kuber Pujan Box</h3><p>A complete puja box for Lakshmi-Kuber puja at home, in a red velvet box.</p><div class="price">₹1,499 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/laxmi-kuber-pujan-box/index.html">View product</a><button class="addbtn" data-slug="laxmi-kuber-pujan-box" data-name="Diwali Special Laxmi Kuber Pujan Box" data-price="1499">Add to Cart</button></div></div><div class="pcard"><div class="phimg"><img src="/images/money-magnet-mala.jpg" alt="Money Magnet Mala with Zibu Symbol Pendant" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Money Magnet Mala with Zibu Symbol Pendant</h3><p>A multi-crystal mala with a green oval Zibu symbol pendant (808 520 741).</p><div class="price">₹799 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/money-magnet-mala/index.html">View product</a><button class="addbtn" data-slug="money-magnet-mala" data-name="Money Magnet Mala with Zibu Symbol Pendant" data-price="799">Add to Cart</button></div></div><div class="pcard"><div class="phimg"><img src="/images/7-chakra-tree.jpg" alt="7 Chakra Tree" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>7 Chakra Tree</h3><p>A crystal chip tree with stones for the seven chakras, 300 beads.</p><div class="price">₹699 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/7-chakra-tree/index.html">View product</a><button class="addbtn" data-slug="7-chakra-tree" data-name="7 Chakra Tree" data-price="699">Add to Cart</button></div></div><div class="pcard"><div class="phimg"><img src="/images/sphatik-mala.jpg" alt="Clear Quartz (Sphatik) Mala — 8mm" loading="lazy"></div><div class="phcap">Product photo — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Clear Quartz (Sphatik) Mala — 8mm</h3><p>A natural clear quartz mala with natural inclusions.</p><div class="price">₹999 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/sphatik-mala-clear-quartz/index.html">View product</a><button class="addbtn" data-slug="sphatik-mala-clear-quartz" data-name="Clear Quartz (Sphatik) Mala — 8mm" data-price="999">Add to Cart</button></div></div><div class="pcard"><div class="phimg"><img src="/images/rudraksh-mala-109-beads.jpg" alt="Rudraksh Mala — 109 Beads" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Rudraksh Mala — 109 Beads</h3><p>A knotted rudraksha mala with 109 beads for japa and prayer.</p><div class="price">₹599 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/rudraksh-mala-109-beads/index.html">View product</a><button class="addbtn" data-slug="rudraksh-mala-109-beads" data-name="Rudraksh Mala — 109 Beads" data-price="599">Add to Cart</button></div></div><div class="pcard"><div class="phimg"><img src="/images/vastu-pyrite-tortoise.jpg" alt="Vastu Pyrite Tortoise (Kachua)" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Vastu Pyrite Tortoise (Kachua)</h3><p>A pyrite tortoise, traditionally placed in homes and shops as a vastu symbol.</p><div class="price">₹699 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/vastu-pyrite-tortoise/index.html">View product</a><button class="addbtn" data-slug="vastu-pyrite-tortoise" data-name="Vastu Pyrite Tortoise (Kachua)" data-price="699">Add to Cart</button></div></div><div class="pcard"><div class="phimg"><img src="/images/dhan-yog-bracelet.jpg" alt="Dhan Yog Bracelet — 4 Types" loading="lazy"></div><div class="phcap">Product photo — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Dhan Yog Bracelet — 4 Types</h3><p>4 types, each with its own entry on the product page.</p><div class="price">From ₹699 <span class="draftnote">— owner-approved price</span></div>
+<a class="viewlink" href="/products/laxmi-kuber-pujan-box/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="laxmi-kuber-pujan-box" data-name="Diwali Special Laxmi Kuber Pujan Box" data-price="1499">Add to Cart</button><span class="stepper" data-stepper="laxmi-kuber-pujan-box" hidden><button class="qbtn" type="button" data-dec="laxmi-kuber-pujan-box" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="laxmi-kuber-pujan-box" aria-label="Increase quantity">+</button></span></span></div></div><div class="pcard"><div class="phimg"><img src="/images/money-magnet-mala.jpg" alt="Money Magnet Mala with Zibu Symbol Pendant" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Money Magnet Mala with Zibu Symbol Pendant</h3><p>A multi-crystal mala with a green oval Zibu symbol pendant (808 520 741).</p><div class="price">₹799 <span class="draftnote">inclusive of all taxes</span></div>
+<a class="viewlink" href="/products/money-magnet-mala/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="money-magnet-mala" data-name="Money Magnet Mala with Zibu Symbol Pendant" data-price="799">Add to Cart</button><span class="stepper" data-stepper="money-magnet-mala" hidden><button class="qbtn" type="button" data-dec="money-magnet-mala" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="money-magnet-mala" aria-label="Increase quantity">+</button></span></span></div></div><div class="pcard"><div class="phimg"><img src="/images/7-chakra-tree.jpg" alt="7 Chakra Tree" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>7 Chakra Tree</h3><p>A crystal chip tree with stones for the seven chakras, 300 beads.</p><div class="price">₹699 <span class="draftnote">inclusive of all taxes</span></div>
+<a class="viewlink" href="/products/7-chakra-tree/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="7-chakra-tree" data-name="7 Chakra Tree" data-price="699">Add to Cart</button><span class="stepper" data-stepper="7-chakra-tree" hidden><button class="qbtn" type="button" data-dec="7-chakra-tree" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="7-chakra-tree" aria-label="Increase quantity">+</button></span></span></div></div><div class="pcard"><div class="phimg"><img src="/images/sphatik-mala.jpg" alt="Clear Quartz (Sphatik) Mala — 8mm" loading="lazy"></div><div class="phcap">Product photo — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Clear Quartz (Sphatik) Mala — 8mm</h3><p>A natural clear quartz mala with natural inclusions.</p><div class="price">₹999 <span class="draftnote">inclusive of all taxes</span></div>
+<a class="viewlink" href="/products/sphatik-mala-clear-quartz/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="sphatik-mala-clear-quartz" data-name="Clear Quartz (Sphatik) Mala — 8mm" data-price="999">Add to Cart</button><span class="stepper" data-stepper="sphatik-mala-clear-quartz" hidden><button class="qbtn" type="button" data-dec="sphatik-mala-clear-quartz" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="sphatik-mala-clear-quartz" aria-label="Increase quantity">+</button></span></span></div></div><div class="pcard"><div class="phimg"><img src="/images/rudraksh-mala-109-beads.jpg" alt="Rudraksh Mala — 109 Beads" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Rudraksh Mala — 109 Beads</h3><p>A knotted rudraksha mala with 109 beads for japa and prayer.</p><div class="price">₹599 <span class="draftnote">inclusive of all taxes</span></div>
+<a class="viewlink" href="/products/rudraksh-mala-109-beads/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="rudraksh-mala-109-beads" data-name="Rudraksh Mala — 109 Beads" data-price="599">Add to Cart</button><span class="stepper" data-stepper="rudraksh-mala-109-beads" hidden><button class="qbtn" type="button" data-dec="rudraksh-mala-109-beads" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="rudraksh-mala-109-beads" aria-label="Increase quantity">+</button></span></span></div></div><div class="pcard"><div class="phimg"><img src="/images/vastu-pyrite-tortoise.jpg" alt="Vastu Pyrite Tortoise (Kachua)" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Vastu Pyrite Tortoise (Kachua)</h3><p>A pyrite tortoise, traditionally placed in homes and shops as a vastu symbol.</p><div class="price">₹699 <span class="draftnote">inclusive of all taxes</span></div>
+<a class="viewlink" href="/products/vastu-pyrite-tortoise/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="vastu-pyrite-tortoise" data-name="Vastu Pyrite Tortoise (Kachua)" data-price="699">Add to Cart</button><span class="stepper" data-stepper="vastu-pyrite-tortoise" hidden><button class="qbtn" type="button" data-dec="vastu-pyrite-tortoise" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="vastu-pyrite-tortoise" aria-label="Increase quantity">+</button></span></span></div></div><div class="pcard"><div class="phimg"><img src="/images/dhan-yog-bracelet.jpg" alt="Dhan Yog Bracelet — 4 Types" loading="lazy"></div><div class="phcap">Product photo — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Dhan Yog Bracelet — 4 Types</h3><p>4 types, each with its own entry on the product page.</p><div class="price">From ₹699 <span class="draftnote">— owner-approved price</span></div>
 <a class="viewlink" href="/products/dhan-yog-bracelet/index.html">View all types</a></div></div></div></section>
-<section><h2 class="sec">How ordering works</h2><div class="steps">
-<div class="step"><b>1 · Choose and pay</b><p>Pick your product and pay the exact amount by UPI on the product page or in the cart. Prepaid orders save up to 10%.</p></div>
-<div class="step"><b>2 · We confirm and pack</b><p>We confirm your payment, share a photo of the actual piece by email, and pack it with care.</p></div>
-<div class="step"><b>3 · Dispatched with tracking</b><p>Your order ships through Shiprocket and the tracking link is shared by email after dispatch.</p></div></div>
+<section id="how-ordering"><h2 class="sec">What happens after you order</h2><div class="procsteps">
+<div class="pstep"><span class="n">1</span><b>Order placed</b><p>You place your order and pay by UPI, or book COD with the advance in the cart.</p></div>
+<div class="pstep"><span class="n">2</span><b>Payment verified</b><p>We confirm your payment in our UPI app. Nothing is dispatched before payment is verified.</p></div>
+<div class="pstep"><span class="n">3</span><b>Energised</b><p>Your item is cleansed and energised as per tradition before dispatch.</p></div>
+<div class="pstep"><span class="n">4</span><b>Prepared &amp; packed</b><p>Checked piece by piece, wrapped and packed with care in protective packing for safe transit.</p></div>
+<div class="pstep"><span class="n">5</span><b>Dispatched &amp; delivered</b><p>Shipped through Shiprocket, with tracking shared by email. Dispatch within 1–2 working days; delivery usually 3–7 working days across India (estimate).</p></div>
+</div>
+<div style="text-align:center;margin-top:16px"><a class="btn" href="/shop/index.html">Shop the collection</a></div>
 <div class="panel" style="margin-top:16px"><h3>Not sure which rudraksha or mala suits you?</h3><p>Email us at sacredrudra@gmail.com with your question — we will point you to the right mukhi or mala from the range, with the traditional reasoning. Free, and no purchase is needed to ask. <a href="mailto:sacredrudra@gmail.com?subject=Help%20choosing%20a%20rudraksha%20or%20mala">Ask by email</a></p></div></section>
 <section><h2 class="sec">Learn before you choose</h2><p class="sub">Product education from the Rudra blog — what things are, how to choose, how to care for them. Astrology and festival guides live on the separate Astro Sacred blog.</p><div class="grid"><div class="pcard"><div class="in"><h3>Rudraksha Mukhi Guide: How to Choose Between 1 to 14 Mukhi and Gauri Shankar</h3><p>What a mukhi is, how the count is read, the traditional deity and planet for every mukhi from 1 to 14 plus Gauri Shankar, and why price follows rarity, not power.</p><a class="viewlink" href="/blog/rudraksha-mukhi-guide/index.html">Read the guide</a></div></div><div class="pcard"><div class="in"><h3>Rudraksha Mala Guide: Counts, Knots and Care</h3><p>How a rudraksha mala is counted (108 beads plus the guru bead), knotted versus unknotted stringing, which form suits japa and which suits daily wear, and how to care for the beads.</p><a class="viewlink" href="/blog/rudraksha-mala-guide/index.html">Read the guide</a></div></div><div class="pcard"><div class="in"><h3>Sphatik Mala Guide: Real Quartz, Clarity and Care</h3><p>Sphatik is clear quartz — silicon dioxide, Mohs 7. How to tell quartz from glass, what 'with inclusions' really means, the clarity scale, and how to choose and care for a sphatik mala.</p><a class="viewlink" href="/blog/sphatik-mala-guide/index.html">Read the guide</a></div></div></div></section>
-<section><h2 class="sec">Complete the Upay</h2><p class="sub">Pairs buyers put together — each with its photo, price and one-tap add.</p><div class="grid"><div class="pcard"><div class="phimg"><img src="/images/rudraksh-mala-109-beads.jpg" alt="Rudraksh Mala — 109 Beads" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><div class="pname">Rudraksh Mala — 109 Beads</div><div style="font-size:12.5px;color:#8A7460">Pairs with Clear Quartz (Sphatik) Mala — 8mm</div><div class="prow"><span class="price">₹599</span><button class="addbtn" data-slug="rudraksh-mala-109-beads" data-name="Rudraksh Mala — 109 Beads" data-price="599">Add</button></div><a class="pview" href="/products/rudraksh-mala-109-beads/">View</a></div></div><div class="pcard"><div class="phimg"><img src="/images/gomti-chakra.jpg" alt="Gomti Chakra (Loose)" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><div class="pname">Gomti Chakra (Loose)</div><div style="font-size:12.5px;color:#8A7460">Pairs with Diwali Special Laxmi Kuber Pujan Box</div><div class="prow"><span class="price">₹199</span><button class="addbtn" data-slug="gomti-chakra" data-name="Gomti Chakra (Loose)" data-price="199">Add</button></div><a class="pview" href="/products/gomti-chakra/">View</a></div></div><div class="pcard"><div class="phimg"><img src="/images/selenite-charging-plate.jpg" alt="Selenite Charging Plate" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><div class="pname">Selenite Charging Plate</div><div style="font-size:12.5px;color:#8A7460">Pairs with 7 Chakra Tree</div><div class="prow"><span class="price">₹549</span><button class="addbtn" data-slug="selenite-charging-plate" data-name="Selenite Charging Plate" data-price="549">Add</button></div><a class="pview" href="/products/selenite-charging-plate/">View</a></div></div></div></section>
+<section><h2 class="sec">Complete the Upay</h2><p class="sub">Pairs buyers put together — each with its photo, price and one-tap add.</p><div class="grid"><div class="pcard"><div class="phimg"><img src="/images/rudraksh-mala-109-beads.jpg" alt="Rudraksh Mala — 109 Beads" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><div class="pname">Rudraksh Mala — 109 Beads</div><div style="font-size:12.5px;color:#8A7460">Pairs with Clear Quartz (Sphatik) Mala — 8mm</div><div class="prow"><span class="price">₹599</span><span class="addwrap"><button class="addbtn" data-slug="rudraksh-mala-109-beads" data-name="Rudraksh Mala — 109 Beads" data-price="599">Add</button><span class="stepper" data-stepper="rudraksh-mala-109-beads" hidden><button class="qbtn" type="button" data-dec="rudraksh-mala-109-beads" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="rudraksh-mala-109-beads" aria-label="Increase quantity">+</button></span></span></div><a class="pview" href="/products/rudraksh-mala-109-beads/">View</a></div></div><div class="pcard"><div class="phimg"><img src="/images/gomti-chakra.jpg" alt="Gomti Chakra (Loose)" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><div class="pname">Gomti Chakra (Loose)</div><div style="font-size:12.5px;color:#8A7460">Pairs with Diwali Special Laxmi Kuber Pujan Box</div><div class="prow"><span class="price">₹199</span><span class="addwrap"><button class="addbtn" data-slug="gomti-chakra" data-name="Gomti Chakra (Loose)" data-price="199">Add</button><span class="stepper" data-stepper="gomti-chakra" hidden><button class="qbtn" type="button" data-dec="gomti-chakra" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="gomti-chakra" aria-label="Increase quantity">+</button></span></span></div><a class="pview" href="/products/gomti-chakra/">View</a></div></div><div class="pcard"><div class="phimg"><img src="/images/selenite-charging-plate.jpg" alt="Selenite Charging Plate" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><div class="pname">Selenite Charging Plate</div><div style="font-size:12.5px;color:#8A7460">Pairs with 7 Chakra Tree</div><div class="prow"><span class="price">₹549</span><span class="addwrap"><button class="addbtn" data-slug="selenite-charging-plate" data-name="Selenite Charging Plate" data-price="549">Add</button><span class="stepper" data-stepper="selenite-charging-plate" hidden><button class="qbtn" type="button" data-dec="selenite-charging-plate" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="selenite-charging-plate" aria-label="Increase quantity">+</button></span></span></div><a class="pview" href="/products/selenite-charging-plate/">View</a></div></div></div></section>
 <section><div class="creditline"><strong>Astro Sacred buyers:</strong> a completed Astro Sacred purchase earns a single-use ₹100 code off one Rudra Sacred order — prepaid only, valid 45 days, not cash. <a href="/credit/index.html">How the credit works</a></div>
 <div class="disc"><strong>A note on names:</strong> Some traditional product names, like "Money Magnet", describe an intention in crystal tradition — they are not promises. Nothing on this site is sold with a guarantee of money, love, health or any other outcome; the spiritual note on every product page explains this.</div>
 <div class="panel"><h3>Why Rudra Sacred</h3><p>The contents of every product are listed on its own page. Payment is by UPI right on the site — scan the exact-amount QR or tap the UPI button in the cart or on the product page. Dispatch through Shiprocket with tracking. Email support. And a spiritual note on every page: traditional meanings are described as tradition, never sold as guarantees.</p></div></section></div>
 <footer><div class="wrap"><a href="/shipping/index.html">Shipping</a><a href="/returns/index.html">Returns & Replacement</a><a href="/privacy/index.html">Privacy</a><a href="/terms/index.html">Terms</a><a href="/credit-terms/index.html">Credit Terms</a><a href="/about/index.html">About</a><a href="/contact/index.html">Contact</a><div class="ver">Live — launched 11 Nov 2026</div>
 <div style="margin-top:8px">Rudra Sacred — traditional spiritual products. Astro Sacred (digital guides and reports): <a href="https://astrosacred.store">astrosacred.store</a></div>
 </div></footer>
+<div id="stickyBar" hidden><span id="sbText"></span><button id="sbBtn" type="button">Proceed to Checkout</button></div>
 <button id="cartChip" type="button">Cart · <span id="cartCount">0</span></button>
 <div id="cartDrawer"><button id="cartClose" type="button" class="addbtn" style="float:right;margin-top:0">Close</button>
 <h3>Your Cart</h3>
 <p style="font-size:13px;color:#5A5170">Pay by UPI on this site to get the prepaid discount (4–10% by order value), or choose COD with a ₹49 UPI advance.</p>
+<div id="cartView">
 <div id="cartItems"></div>
 <div id="cartBump"></div>
+<div id="slabProg" style="display:none;margin-top:12px">
+<div style="height:10px;border-radius:6px;background:#F1E4C8;overflow:hidden"><i id="spFill" style="display:block;height:100%;width:0;background:linear-gradient(90deg,#F97316,#EA580C);border-radius:6px;transition:width .3s"></i></div>
+<p id="spText" style="font-size:13px;color:#7A4A21;margin-top:5px"></p>
+</div>
 <div style="margin-top:12px;border-top:1.5px solid #E7DEC8;padding-top:10px">
 <div class="crow"><span>Subtotal</span><b id="cartSub">₹0</b></div>
 <div class="crow"><span>Prepaid discount</span><b id="cartDisc">− ₹0</b></div>
 <div class="crow"><span><b>Pay prepaid (online)</b></span><b id="cartPrepaid">₹0</b></div>
 <div class="crow"><span>Or COD: ₹49 advance now, balance on delivery</span><b id="cartCod">₹0</b></div>
 </div>
-<div id="upiBox" style="display:none;margin-top:14px;border-top:1.5px solid #E7DEC8;padding-top:12px">
-<div class="slabtag">PAY BY UPI — EXACT AMOUNT</div>
-<div id="upiQr" style="width:168px;margin:10px auto"></div>
-<p id="upiAmtLine" style="font-size:14.5px;text-align:center"></p>
-<a id="upiPayBtn" class="btn" href="#" style="width:100%;text-align:center;display:block;margin-top:8px">Pay with UPI app</a>
-<button id="upiModeBtn" class="addbtn" type="button" style="margin-top:8px;width:100%"></button>
-<p style="font-size:13px;color:#5A5170;margin-top:8px">Pay the exact amount shown with any UPI app (GPay, PhonePe, Paytm). Then email your payment screenshot with your name and full delivery address to sacredrudra@gmail.com — that completes your order. We dispatch after we confirm the payment in our UPI app.</p>
-</div>
 <button id="cartClear" class="btn btn-off" style="margin-top:10px;width:100%">Clear Cart</button>
-<div style="margin-top:12px;border:1.5px dashed var(--gold);border-radius:12px;padding:12px;background:#FFFBEE;font-size:14px"><b>After paying:</b> email your payment screenshot with your name and full delivery address to sacredrudra@gmail.com — that completes your order. For COD, pay the &#8377;49 advance above the same way, then email the same details.</div>
+<button id="toDetails" class="btn" type="button" style="margin-top:12px;width:100%">Proceed to Checkout</button>
+<p class="trustline">&#10003; COD Available &middot; &#10003; GST invoice &middot; &#10003; Tracking on every order</p>
+</div>
+<div id="detailsView" style="display:none">
+<h4 class="costep">Step 1 of 2 — Your details</h4>
+<label>Full name<input id="fName" type="text" autocomplete="name"></label>
+<label>Mobile number<input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel"></label>
+<label>Email<input id="fEmail" type="email" autocomplete="email"></label>
+<label>Full delivery address<textarea id="fAddr" rows="3"></textarea></label>
+<label>Pincode<input id="fPin" type="text" inputmode="numeric"></label>
+<p id="fErr" style="display:none;color:#B3261E;font-size:13.5px"></p>
+<button id="toPayment" class="btn" type="button" style="width:100%;margin-top:8px">Continue to Payment</button>
+<button id="backToCart" class="addbtn" type="button" style="width:100%;margin-top:8px">Back to cart</button>
+</div>
+<div id="payView" style="display:none">
+<h4 class="costep">Step 2 of 2 — Payment</h4>
+<div id="paySummary" class="sumb"></div>
+<div class="mtoggle"><button id="mPrepaid" class="mtog on" type="button">Prepaid UPI</button><button id="mCod" class="mtog" type="button">Cash on Delivery</button></div>
+<div id="payQr" style="width:180px;margin:12px auto"></div>
+<p id="payAmt" style="text-align:center;font-size:23px;font-weight:800;color:#5C1F14"></p>
+<p id="payNote" style="font-size:14px;text-align:center"></p>
+<a id="payBtn" class="btn" href="#" style="width:100%;text-align:center;display:block;margin-top:8px">Pay with UPI app</a>
+<label style="margin-top:10px">UPI reference / UTR (optional)<input id="fUtr" type="text" placeholder="If you have paid, paste the UTR here"></label>
+<button id="placeOrder" class="btn" type="button" style="width:100%;margin-top:10px">Place Order</button>
+<p class="procstrip">Order placed &rarr; Payment verified &rarr; Energised &rarr; Prepared &amp; packed &rarr; Dispatched &amp; delivered</p>
+<button id="backToDetails" class="addbtn" type="button" style="width:100%;margin-top:8px">Back to details</button>
+</div>
+<div id="successView" style="display:none;text-align:center">
+<div class="succTick">&#10003;</div>
+<h4 style="color:#15803D;font-size:20px">Order placed</h4>
+<p>Your order ID is <b id="succOid"></b></p>
+<div id="succSummary" class="sumb" style="text-align:left"></div>
+<p style="font-size:14.5px;text-align:left">What happens next: we verify your payment, then your item is cleansed and energised as per tradition, checked piece by piece and packed with care, and dispatched through Shiprocket — tracking is shared by email. Dispatch within 1–2 working days; delivery usually 3–7 working days across India (estimate).</p>
+<p id="succMail" style="display:none;font-size:14.5px;text-align:left">To complete your order, please email your payment screenshot with your name and full delivery address to sacredrudra@gmail.com.</p>
+<button id="succClose" class="btn" type="button" style="width:100%;margin-top:8px">Continue Shopping</button>
+</div>
 </div>
 <script>/**
  * Minified by jsDelivr using Terser v5.37.0.
@@ -222,6 +290,8 @@ var SLABS = [[4000,10],[1999,8],[999,6],[0,4]];
 var STORE_LIVE = true;
 var UPI_ID = 'therudrasacred@slc';
 var payMode = 'full';
+var ORDER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwmbmCo6vHSYEtxIVLutOKaRruoHLGHPBow-nEeSflufP1RBdrXagvXML1wWr7ezxPK/exec';
+var coDetails = {};
 function upiUrl(amt, note){ return 'upi://pay?pa=' + UPI_ID + '&pn=' + encodeURIComponent('Rudra Sacred') + '&am=' + amt + '&cu=INR&tn=' + encodeURIComponent(note || 'Rudra Sacred order'); }
 function drawQr(el, text){ if (!el || typeof qrcode === 'undefined') return; try { var qr = qrcode(0, 'M'); qr.addData(text); qr.make(); el.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4, scalable: true }); } catch(e){ el.innerHTML = ''; } }
 function slabPct(t){ for (var i=0;i<SLABS.length;i++){ if (t>=SLABS[i][0]) return SLABS[i][1]; } return 4; }
@@ -243,23 +313,29 @@ function renderCart(){
   el = document.getElementById('cartDisc'); if (el) el.textContent = '− ₹' + disc.toLocaleString('en-IN') + ' (' + pct + '%)';
   el = document.getElementById('cartPrepaid'); if (el) el.textContent = '₹' + (sub - disc).toLocaleString('en-IN');
   el = document.getElementById('cartCod'); if (el) el.textContent = sub ? ('₹' + sub.toLocaleString('en-IN') + ' total') : '₹0';
-  var ubox = document.getElementById('upiBox');
-  if (ubox){ if (STORE_LIVE && sub > 0){ ubox.style.display = 'block';
-      var uamt = payMode === 'cod' ? 49 : (sub - disc);
-      var unote = payMode === 'cod' ? 'Rudra Sacred COD advance' : 'Rudra Sacred order';
-      drawQr(document.getElementById('upiQr'), upiUrl(uamt, unote));
-      var ual = document.getElementById('upiAmtLine'); if (ual) ual.innerHTML = payMode === 'cod' ? 'COD advance: <b>₹49</b> (balance ₹' + (sub - 49).toLocaleString('en-IN') + ' on delivery)' : 'Prepaid total: <b>₹' + uamt.toLocaleString('en-IN') + '</b>';
-      var upb = document.getElementById('upiPayBtn'); if (upb){ upb.href = upiUrl(uamt, unote); upb.textContent = 'Pay ₹' + uamt.toLocaleString('en-IN') + ' with UPI app'; }
-      var umb = document.getElementById('upiModeBtn'); if (umb) umb.textContent = payMode === 'cod' ? 'Pay the full prepaid amount instead' : 'Pay only the ₹49 COD advance instead';
-    } else { ubox.style.display = 'none'; } }
+  var sb = document.getElementById('stickyBar');
+  if (sb){ var drw = document.getElementById('cartDrawer'); var isOpen = drw && drw.classList.contains('open');
+    if (n > 0 && !isOpen){ sb.hidden = false; var sbt = document.getElementById('sbText'); if (sbt) sbt.textContent = n + (n === 1 ? ' item' : ' items') + ' · ₹' + (sub - disc).toLocaleString('en-IN') + ' prepaid'; } else { sb.hidden = true; } }
+  var sp = document.getElementById('slabProg');
+  if (sp){ if (sub > 0){ sp.style.display = 'block'; var sfill = document.getElementById('spFill'), stxt = document.getElementById('spText');
+      if (sub >= 4000){ if (sfill) sfill.style.width = '100%'; if (stxt) stxt.textContent = 'Top slab unlocked — 10% OFF applied on prepaid orders.'; }
+      else { var NX = [[999, 6], [1999, 8], [4000, 10]], nx = NX[2];
+        for (var q = 0; q < NX.length; q++){ if (sub < NX[q][0]){ nx = NX[q]; break; } }
+        if (sfill) sfill.style.width = Math.min(100, Math.round(sub / nx[0] * 100)) + '%';
+        if (stxt) stxt.textContent = 'Add ₹' + (nx[0] - sub).toLocaleString('en-IN') + ' more to unlock ' + nx[1] + '% OFF on prepaid orders.'; } }
+    else { sp.style.display = 'none'; } }
+  var stps = document.querySelectorAll('[data-stepper]');
+  for (var s2 = 0; s2 < stps.length; s2++){ var sl2 = stps[s2].getAttribute('data-stepper'), q2 = c[sl2] || 0;
+    stps[s2].hidden = !(q2 > 0); var bv = stps[s2].querySelector('.sqv'); if (bv) bv.textContent = q2;
+    var ab = stps[s2].parentElement ? stps[s2].parentElement.querySelector('.addbtn') : null; if (ab) ab.style.display = q2 > 0 ? 'none' : ''; }
   var bump = document.getElementById('cartBump');
   if (bump){ bump.innerHTML = '';
     outer: for (var i=0;i<keys.length;i++){ var pairs = PAIRMAP[keys[i]] || [];
       for (var j=0;j<pairs.length;j++){ var pair = pairs[j];
         if (!c[pair] && PRICEBOOK[pair]){ bump.innerHTML = '<div class="bumpbox"><span class="slabtag">CART BUMP — COMPLETE THE UPAY</span><p style="font-size:14.5px;margin-top:4px"><b>' + PRICEBOOK[pair][0] + '</b> — ₹' + PRICEBOOK[pair][1].toLocaleString('en-IN') + '. Traditionally paired with your item.</p><button class="addbtn" data-slug="' + pair + '">Add This Too</button></div>'; break outer; } } } }
 }
-function openCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.add('open'); }
-function closeCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.remove('open'); }
+function openCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.add('open'); var sb2 = document.getElementById('stickyBar'); if (sb2) sb2.hidden = true; }
+function closeCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.remove('open'); renderCart(); }
 document.addEventListener('click', function(e){
   if (e.target.closest('#cartChip')){ renderCart(); openCart(); return; }
   if (e.target.closest('#cartClose')){ closeCart(); return; }
@@ -271,6 +347,60 @@ document.addEventListener('click', function(e){
   var um = e.target.closest('#upiModeBtn'); if (um){ payMode = (payMode === 'cod') ? 'full' : 'cod'; renderCart(); return; }
   if (e.target.closest('#cartClear')){ clearCart(); return; }
   var b = e.target.closest('.addbtn[data-slug]'); if (b){ addToCart(b.getAttribute('data-slug')); }
+});
+function showView(v){
+  var views = {cart: 'cartView', details: 'detailsView', pay: 'payView', success: 'successView'};
+  for (var k in views){ var el = document.getElementById(views[k]); if (el) el.style.display = (k === v) ? 'block' : 'none'; }
+  var dr = document.getElementById('cartDrawer'); if (dr) dr.scrollTop = 0;
+}
+function cartTotals(){ var c = getCart(), sub = 0; Object.keys(c).forEach(function(k){ var it = PRICEBOOK[k]; if (it) sub += it[1] * c[k]; }); var pct = slabPct(sub), disc = Math.round(sub * pct / 100); return {sub: sub, pct: pct, disc: disc}; }
+function renderPay(){
+  var c = getCart(), t = cartTotals(), lines = '';
+  Object.keys(c).forEach(function(k){ var it = PRICEBOOK[k]; if (it) lines += '<div class="crow"><span>' + it[0] + ' × ' + c[k] + '</span><b>₹' + (it[1] * c[k]).toLocaleString('en-IN') + '</b></div>'; });
+  var cod = payMode === 'cod';
+  lines += '<div class="crow"><span>Subtotal</span><b>₹' + t.sub.toLocaleString('en-IN') + '</b></div>';
+  if (!cod) lines += '<div class="crow"><span>Prepaid discount (' + t.pct + '%)</span><b>− ₹' + t.disc.toLocaleString('en-IN') + '</b></div>';
+  lines += '<div class="crow"><span><b>' + (cod ? 'Total (balance on delivery, after the advance)' : 'Total to pay') + '</b></span><b>₹' + (cod ? t.sub : (t.sub - t.disc)).toLocaleString('en-IN') + '</b></div>';
+  var ps = document.getElementById('paySummary'); if (ps) ps.innerHTML = lines;
+  var amt = cod ? 49 : (t.sub - t.disc);
+  drawQr(document.getElementById('payQr'), upiUrl(amt, cod ? 'Rudra Sacred COD advance' : 'Rudra Sacred order'));
+  var pa = document.getElementById('payAmt'); if (pa) pa.textContent = '₹' + amt.toLocaleString('en-IN');
+  var pn = document.getElementById('payNote'); if (pn) pn.innerHTML = cod ? 'Pay the <b>₹49 advance</b> now in your UPI app. The balance of ₹' + (t.sub - 49).toLocaleString('en-IN') + ' is paid in cash when your order arrives.' : 'Pay the exact amount in your UPI app — GPay, PhonePe, Paytm or any UPI app.';
+  var pb = document.getElementById('payBtn'); if (pb){ pb.href = upiUrl(amt, cod ? 'Rudra Sacred COD advance' : 'Rudra Sacred order'); pb.textContent = 'Pay ₹' + amt.toLocaleString('en-IN') + ' with UPI app'; }
+  var mp = document.getElementById('mPrepaid'), mc = document.getElementById('mCod');
+  if (mp) mp.classList.toggle('on', !cod); if (mc) mc.classList.toggle('on', cod);
+}
+document.addEventListener('click', function(e){
+  if (e.target.closest('#sbBtn')){ renderCart(); openCart(); return; }
+  if (e.target.closest('#toDetails')){ if (!Object.keys(getCart()).length) return; showView('details'); return; }
+  if (e.target.closest('#backToCart')){ showView('cart'); return; }
+  if (e.target.closest('#backToDetails')){ showView('details'); return; }
+  if (e.target.closest('#mPrepaid')){ payMode = 'full'; renderPay(); return; }
+  if (e.target.closest('#mCod')){ payMode = 'cod'; renderPay(); return; }
+  if (e.target.closest('#toPayment')){
+    var name = document.getElementById('fName').value.trim(), phone = document.getElementById('fPhone').value.replace(/\D/g, ''), email = document.getElementById('fEmail').value.trim(), addr = document.getElementById('fAddr').value.trim(), pin = document.getElementById('fPin').value.replace(/\D/g, '');
+    var err = '';
+    if (name.length < 3) err = 'Please enter your full name.';
+    else if (phone.length !== 10) err = 'Please enter a 10-digit mobile number.';
+    else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) err = 'Please enter a valid email address.';
+    else if (addr.length < 12) err = 'Please enter your full delivery address.';
+    else if (pin.length !== 6) err = 'Please enter a 6-digit pincode.';
+    var fe = document.getElementById('fErr');
+    if (err){ if (fe){ fe.textContent = err; fe.style.display = 'block'; } return; }
+    if (fe) fe.style.display = 'none';
+    coDetails = {name: name, phone: phone, email: email, address: addr, pincode: pin};
+    renderPay(); showView('pay'); return; }
+  if (e.target.closest('#placeOrder')){
+    var c = getCart(), t = cartTotals(), cod = payMode === 'cod';
+    var items = Object.keys(c).map(function(k){ var it = PRICEBOOK[k]; return it ? (it[0] + ' × ' + c[k]) : ''; }).filter(Boolean).join('\n');
+    var oid = 'RS' + Date.now();
+    var payload = {oid: oid, name: coDetails.name || '', phone: coDetails.phone || '', email: coDetails.email || '', address: coDetails.address || '', pincode: coDetails.pincode || '', items: items, subtotal: t.sub, discount: cod ? 0 : t.disc, total: cod ? t.sub : (t.sub - t.disc), method: cod ? 'COD' : 'Prepaid UPI', utr: (document.getElementById('fUtr').value || '').trim()};
+    if (ORDER_ENDPOINT){ try { fetch(ORDER_ENDPOINT, {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)}); } catch (err2){} }
+    var so = document.getElementById('succOid'); if (so) so.textContent = oid;
+    var ss = document.getElementById('succSummary'); if (ss) ss.innerHTML = '<div class="crow"><span>Items</span><b>' + items.replace(/\n/g, '<br>') + '</b></div><div class="crow"><span>Payment</span><b>' + payload.method + '</b></div><div class="crow"><span>Total</span><b>₹' + payload.total.toLocaleString('en-IN') + '</b></div>';
+    var sm = document.getElementById('succMail'); if (sm) sm.style.display = ORDER_ENDPOINT ? 'none' : 'block';
+    clearCart(); showView('success'); return; }
+  if (e.target.closest('#succClose')){ closeCart(); showView('cart'); return; }
 });
 document.addEventListener('DOMContentLoaded', function(){ renderCart(); if (STORE_LIVE){ var qs = document.querySelectorAll('.ppqr'); for (var i = 0; i < qs.length; i++){ drawQr(qs[i], upiUrl(parseInt(qs[i].getAttribute('data-amt'), 10), qs[i].getAttribute('data-note'))); } } });
 </script>
