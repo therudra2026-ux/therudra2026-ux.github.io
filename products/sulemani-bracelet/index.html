@@ -129,6 +129,35 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 .step{background:#fff;border:1px solid #EBDDBE;border-top:3px solid var(--gold);border-radius:14px;padding:16px;box-shadow:0 6px 16px rgba(92,31,20,.08)}
 .step b{color:var(--maroon)}
 .trustrow{font-size:13.5px;color:#5C4633;margin-top:8px}
+
+#stickyBar{position:fixed;left:0;right:0;bottom:0;z-index:65;background:#FFFBF3;border-top:1.5px solid var(--gold);box-shadow:0 -6px 20px rgba(92,31,20,.14);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+#stickyBar[hidden]{display:none}
+#sbText{font-weight:700;color:#5C1F14;font-size:15px}
+#sbBtn{background:linear-gradient(135deg,#F97316,#EA580C);color:#fff;border:0;border-radius:12px;padding:12px 18px;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 8px 18px rgba(234,88,12,.35)}
+@media(min-width:900px){#stickyBar{left:auto;right:22px;bottom:22px;width:350px;border:1.5px solid var(--gold);border-radius:16px;box-shadow:0 16px 34px rgba(92,31,20,.22)}}
+.addwrap{display:inline-flex;align-items:center;gap:8px}
+.stepper{display:inline-flex;align-items:center;gap:4px;background:#FFF3DC;border:1.5px solid var(--gold);border-radius:999px;padding:2px 5px}
+.stepper[hidden]{display:none}
+.stepper .sqv{min-width:20px;text-align:center;color:#5C1F14}
+.trustline{font-size:12.5px;color:#15803D;margin-top:8px;font-weight:600}
+.costep{color:#5C1F14;font-size:17px;margin:4px 0 10px}
+#detailsView label,#payView label{display:block;font-size:13.5px;color:#5C4633;margin-top:9px;font-weight:600}
+#detailsView input,#detailsView textarea,#payView input{width:100%;margin-top:4px;padding:10px;border:1.5px solid #E3D3AC;border-radius:10px;background:#fff;font-size:15px;color:#3D2C22;box-sizing:border-box}
+.mtoggle{display:flex;gap:8px;margin-top:12px}
+.mtog{flex:1;padding:11px;border-radius:12px;border:1.5px solid #E3D3AC;background:#fff;font-weight:700;color:#5C4633;cursor:pointer;font-size:14.5px}
+.mtog.on{background:linear-gradient(135deg,#F97316,#EA580C);color:#fff;border-color:#EA580C}
+.sumb{background:#FFF3DC;border:1px solid #EBD9A8;border-radius:12px;padding:10px 12px;margin-top:10px}
+.procstrip{font-size:12px;color:#7A4A21;text-align:center;margin-top:10px;line-height:1.6}
+.succTick{width:64px;height:64px;border-radius:50%;background:#15803D;color:#fff;font-size:34px;line-height:64px;margin:10px auto;text-align:center;box-shadow:0 10px 22px rgba(21,128,61,.35)}
+.procsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.pstep{background:#fff;border:1.5px solid #EBD9A8;border-radius:14px;padding:12px;box-shadow:0 8px 18px rgba(92,31,20,.08)}
+.pstep .n{display:inline-block;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#F97316,#EA580C);color:#fff;font-weight:800;text-align:center;line-height:26px;font-size:14px}
+.pstep b{display:block;color:#5C1F14;margin:7px 0 4px;font-size:15px}
+.pstep p{font-size:13.5px;color:#5C4633}
+.slimsteps{display:flex;flex-wrap:wrap;gap:5px;align-items:center;font-size:12px;color:#7A4A21;margin-top:8px}
+.slimsteps span{background:#FFF3DC;border:1px solid #EBD9A8;border-radius:999px;padding:3px 8px;font-weight:600}
+.truststrip{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.truststrip span{background:#fff;border:1.5px solid #BFE3CD;color:#14532D;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;box-shadow:0 5px 12px rgba(21,128,61,.10)}
 </style></head><body>
 <div class="draftbar" style="background:#FFF3DC;color:#5C1F14;border-bottom:1px solid #C9A227">COD Available · Up to 10% OFF on prepaid orders · Free guidance by email</div>
 <header><a class="logo" href="/index.html">RUDRA SACRED</a>
@@ -137,8 +166,10 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 <h1 style="color:#5C1F14;font-size:30px;margin-top:12px">Sulemani Hakik Bracelet</h1><p style="color:#5C4633">A sulemani hakik bracelet in 8mm beads.</p></div></div>
 <div class="phimg big"><img src="/images/sulemani-bracelet.jpg" alt="Sulemani Hakik Bracelet" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div>
 <div style="margin-top:18px"><div class="price">₹849 <span class="draftnote">inclusive of all taxes</span></div></div>
-<div><button class="addbtn" data-slug="sulemani-bracelet" data-name="Sulemani Hakik Bracelet" data-price="849">Add to Cart</button></div><div class="panel"><h3 style="color:var(--plum2)">Pay now with UPI</h3><div class="ppqr" data-amt="815" data-note="Sulemani Hakik Bracelet" style="width:168px;margin:12px auto"></div><p style="font-size:14.5px">Prepaid price <b>₹815</b> (4% off ₹849) — scan with GPay, PhonePe, Paytm or any UPI app, or tap the button below on your phone. Then email the payment screenshot with your name and full delivery address to sacredrudra@gmail.com — that completes your order. We dispatch after we confirm the payment in our UPI app. Buying more than one item? Add to cart — your prepaid discount applies on the total there.</p><a class="btn" style="margin-top:10px" href="upi://pay?pa=therudrasacred@slc&pn=Rudra%20Sacred&am=815&cu=INR&tn=Sulemani%20Hakik%20Bracelet">Pay ₹815 with UPI app</a></div>
-<h2 class="sec">Complete the Upay — Pairs With This</h2><p style="font-size:14.5px;color:#5A5170">Traditionally paired items — the piece that completes the same upay. Optional add-ons, never required.</p><div class="pairgrid"><div class="paircard"><h4>Selenite Charging Plate</h4><div class="price" style="font-size:18px">₹549</div><p>Rest the bracelet on the selenite plate between uses — the standard crystal-care pairing.</p><button class="addbtn" data-slug="selenite-charging-plate" data-name="Selenite Charging Plate" data-price="549">Add to Cart</button></div></div>
+<div><span class="addwrap"><button class="addbtn" data-slug="sulemani-bracelet" data-name="Sulemani Hakik Bracelet" data-price="849">Add to Cart</button><span class="stepper" data-stepper="sulemani-bracelet" hidden><button class="qbtn" type="button" data-dec="sulemani-bracelet" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="sulemani-bracelet" aria-label="Increase quantity">+</button></span></span></div><div class="panel"><h3 style="color:var(--plum2)">Pay now with UPI</h3><div class="ppqr" data-amt="815" data-note="Sulemani Hakik Bracelet" style="width:168px;margin:12px auto"></div><p style="font-size:14.5px">Prepaid price <b>₹815</b> (4% off ₹849) — scan with GPay, PhonePe, Paytm or any UPI app, or tap the button below on your phone. Then email the payment screenshot with your name and full delivery address to sacredrudra@gmail.com — that completes your order. We dispatch after we confirm the payment in our UPI app. Buying more than one item? Add to cart — your prepaid discount applies on the total there.</p><a class="btn" style="margin-top:10px" href="upi://pay?pa=therudrasacred@slc&pn=Rudra%20Sacred&am=815&cu=INR&tn=Sulemani%20Hakik%20Bracelet">Pay ₹815 with UPI app</a></div>
+<p class="trustline">&#10003; COD Available &middot; &#10003; GST invoice &middot; &#10003; Tracking on every order</p>
+<div class="slimsteps"><span>1 · Order placed</span><span>2 · Payment verified</span><span>3 · Energised</span><span>4 · Prepared &amp; packed</span><span>5 · Dispatched &amp; delivered</span></div>
+<h2 class="sec">Complete the Upay — Pairs With This</h2><p style="font-size:14.5px;color:#5A5170">Traditionally paired items — the piece that completes the same upay. Optional add-ons, never required.</p><div class="pairgrid"><div class="paircard"><h4>Selenite Charging Plate</h4><div class="price" style="font-size:18px">₹549</div><p>Rest the bracelet on the selenite plate between uses — the standard crystal-care pairing.</p><span class="addwrap"><button class="addbtn" data-slug="selenite-charging-plate" data-name="Selenite Charging Plate" data-price="549">Add to Cart</button><span class="stepper" data-stepper="selenite-charging-plate" hidden><button class="qbtn" type="button" data-dec="selenite-charging-plate" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="selenite-charging-plate" aria-label="Increase quantity">+</button></span></span></div></div>
 
 <div class="panel"><h3>Tradition and use</h3><p>In crystal tradition, sulemani hakik is associated with protection in traditional Indian practice. Many people wear it as a reminder of that intention. It is sold as a spiritual and decorative item; no outcome is promised or implied.</p></div>
 <div class="panel"><h3>What is included</h3><p>One sulemani hakik bracelet, 8mm beads.</p></div>
@@ -154,35 +185,68 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 <button class="addbtn" data-both="sulemani-bracelet|selenite-charging-plate">Add Both to Cart</button></div>
 
 <h2 class="sec">Related products</h2><div class="grid"><div class="pcard"><div class="phimg"><img src="/images/7-chakra-bracelet.jpg" alt="7 Chakra Bracelet — 6mm" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>7 Chakra Bracelet — 6mm</h3><p>A bracelet with seven stones, one for each chakra, in 6mm beads.</p><div class="price">₹899 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/7-chakra-bracelet/index.html">View product</a><button class="addbtn" data-slug="7-chakra-bracelet" data-name="7 Chakra Bracelet — 6mm" data-price="899">Add to Cart</button></div></div><div class="pcard"><div class="phimg"><img src="/images/rose-quartz-bracelet.jpg" alt="Rose Quartz Bracelet — 8mm" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Rose Quartz Bracelet — 8mm</h3><p>A rose quartz bracelet in 8mm beads — the lead piece of the Love Collection.</p><div class="price">₹749 <span class="draftnote">inclusive of all taxes</span></div>
-<a class="viewlink" href="/products/rose-quartz-bracelet/index.html">View product</a><button class="addbtn" data-slug="rose-quartz-bracelet" data-name="Rose Quartz Bracelet — 8mm" data-price="749">Add to Cart</button></div></div></div>
+<a class="viewlink" href="/products/7-chakra-bracelet/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="7-chakra-bracelet" data-name="7 Chakra Bracelet — 6mm" data-price="899">Add to Cart</button><span class="stepper" data-stepper="7-chakra-bracelet" hidden><button class="qbtn" type="button" data-dec="7-chakra-bracelet" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="7-chakra-bracelet" aria-label="Increase quantity">+</button></span></span></div></div><div class="pcard"><div class="phimg"><img src="/images/rose-quartz-bracelet.jpg" alt="Rose Quartz Bracelet — 8mm" loading="lazy"></div><div class="phcap">Illustrative product image — natural materials vary slightly in colour, size and markings.</div><div class="in"><h3>Rose Quartz Bracelet — 8mm</h3><p>A rose quartz bracelet in 8mm beads — the lead piece of the Love Collection.</p><div class="price">₹749 <span class="draftnote">inclusive of all taxes</span></div>
+<a class="viewlink" href="/products/rose-quartz-bracelet/index.html">View product</a><span class="addwrap"><button class="addbtn" data-slug="rose-quartz-bracelet" data-name="Rose Quartz Bracelet — 8mm" data-price="749">Add to Cart</button><span class="stepper" data-stepper="rose-quartz-bracelet" hidden><button class="qbtn" type="button" data-dec="rose-quartz-bracelet" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="rose-quartz-bracelet" aria-label="Increase quantity">+</button></span></span></div></div></div>
 </section></div>
-<div class="buybar"><span class="nm">Sulemani Hakik Bracelet</span><button class="addbtn" data-slug="sulemani-bracelet" data-name="Sulemani Hakik Bracelet" data-price="849">Add to Cart</button></div>
+<div class="buybar"><span class="nm">Sulemani Hakik Bracelet</span><span class="addwrap"><button class="addbtn" data-slug="sulemani-bracelet" data-name="Sulemani Hakik Bracelet" data-price="849">Add to Cart</button><span class="stepper" data-stepper="sulemani-bracelet" hidden><button class="qbtn" type="button" data-dec="sulemani-bracelet" aria-label="Decrease quantity">&minus;</button><b class="sqv">0</b><button class="qbtn" type="button" data-inc="sulemani-bracelet" aria-label="Increase quantity">+</button></span></span></div>
 <footer><div class="wrap"><a href="/shipping/index.html">Shipping</a><a href="/returns/index.html">Returns & Replacement</a><a href="/privacy/index.html">Privacy</a><a href="/terms/index.html">Terms</a><a href="/credit-terms/index.html">Credit Terms</a><a href="/about/index.html">About</a><a href="/contact/index.html">Contact</a><div class="ver">Live — launched 11 Nov 2026</div>
 <div style="margin-top:8px">Rudra Sacred — traditional spiritual products. Astro Sacred (digital guides and reports): <a href="https://astrosacred.store">astrosacred.store</a></div>
 </div></footer>
+<div id="stickyBar" hidden><span id="sbText"></span><button id="sbBtn" type="button">Proceed to Checkout</button></div>
 <button id="cartChip" type="button">Cart · <span id="cartCount">0</span></button>
 <div id="cartDrawer"><button id="cartClose" type="button" class="addbtn" style="float:right;margin-top:0">Close</button>
 <h3>Your Cart</h3>
 <p style="font-size:13px;color:#5A5170">Pay by UPI on this site to get the prepaid discount (4–10% by order value), or choose COD with a ₹49 UPI advance.</p>
+<div id="cartView">
 <div id="cartItems"></div>
 <div id="cartBump"></div>
+<div id="slabProg" style="display:none;margin-top:12px">
+<div style="height:10px;border-radius:6px;background:#F1E4C8;overflow:hidden"><i id="spFill" style="display:block;height:100%;width:0;background:linear-gradient(90deg,#F97316,#EA580C);border-radius:6px;transition:width .3s"></i></div>
+<p id="spText" style="font-size:13px;color:#7A4A21;margin-top:5px"></p>
+</div>
 <div style="margin-top:12px;border-top:1.5px solid #E7DEC8;padding-top:10px">
 <div class="crow"><span>Subtotal</span><b id="cartSub">₹0</b></div>
 <div class="crow"><span>Prepaid discount</span><b id="cartDisc">− ₹0</b></div>
 <div class="crow"><span><b>Pay prepaid (online)</b></span><b id="cartPrepaid">₹0</b></div>
 <div class="crow"><span>Or COD: ₹49 advance now, balance on delivery</span><b id="cartCod">₹0</b></div>
 </div>
-<div id="upiBox" style="display:none;margin-top:14px;border-top:1.5px solid #E7DEC8;padding-top:12px">
-<div class="slabtag">PAY BY UPI — EXACT AMOUNT</div>
-<div id="upiQr" style="width:168px;margin:10px auto"></div>
-<p id="upiAmtLine" style="font-size:14.5px;text-align:center"></p>
-<a id="upiPayBtn" class="btn" href="#" style="width:100%;text-align:center;display:block;margin-top:8px">Pay with UPI app</a>
-<button id="upiModeBtn" class="addbtn" type="button" style="margin-top:8px;width:100%"></button>
-<p style="font-size:13px;color:#5A5170;margin-top:8px">Pay the exact amount shown with any UPI app (GPay, PhonePe, Paytm). Then email your payment screenshot with your name and full delivery address to sacredrudra@gmail.com — that completes your order. We dispatch after we confirm the payment in our UPI app.</p>
-</div>
 <button id="cartClear" class="btn btn-off" style="margin-top:10px;width:100%">Clear Cart</button>
-<div style="margin-top:12px;border:1.5px dashed var(--gold);border-radius:12px;padding:12px;background:#FFFBEE;font-size:14px"><b>After paying:</b> email your payment screenshot with your name and full delivery address to sacredrudra@gmail.com — that completes your order. For COD, pay the &#8377;49 advance above the same way, then email the same details.</div>
+<button id="toDetails" class="btn" type="button" style="margin-top:12px;width:100%">Proceed to Checkout</button>
+<p class="trustline">&#10003; COD Available &middot; &#10003; GST invoice &middot; &#10003; Tracking on every order</p>
+</div>
+<div id="detailsView" style="display:none">
+<h4 class="costep">Step 1 of 2 — Your details</h4>
+<label>Full name<input id="fName" type="text" autocomplete="name"></label>
+<label>Mobile number<input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel"></label>
+<label>Email<input id="fEmail" type="email" autocomplete="email"></label>
+<label>Full delivery address<textarea id="fAddr" rows="3"></textarea></label>
+<label>Pincode<input id="fPin" type="text" inputmode="numeric"></label>
+<p id="fErr" style="display:none;color:#B3261E;font-size:13.5px"></p>
+<button id="toPayment" class="btn" type="button" style="width:100%;margin-top:8px">Continue to Payment</button>
+<button id="backToCart" class="addbtn" type="button" style="width:100%;margin-top:8px">Back to cart</button>
+</div>
+<div id="payView" style="display:none">
+<h4 class="costep">Step 2 of 2 — Payment</h4>
+<div id="paySummary" class="sumb"></div>
+<div class="mtoggle"><button id="mPrepaid" class="mtog on" type="button">Prepaid UPI</button><button id="mCod" class="mtog" type="button">Cash on Delivery</button></div>
+<div id="payQr" style="width:180px;margin:12px auto"></div>
+<p id="payAmt" style="text-align:center;font-size:23px;font-weight:800;color:#5C1F14"></p>
+<p id="payNote" style="font-size:14px;text-align:center"></p>
+<a id="payBtn" class="btn" href="#" style="width:100%;text-align:center;display:block;margin-top:8px">Pay with UPI app</a>
+<label style="margin-top:10px">UPI reference / UTR (optional)<input id="fUtr" type="text" placeholder="If you have paid, paste the UTR here"></label>
+<button id="placeOrder" class="btn" type="button" style="width:100%;margin-top:10px">Place Order</button>
+<p class="procstrip">Order placed &rarr; Payment verified &rarr; Energised &rarr; Prepared &amp; packed &rarr; Dispatched &amp; delivered</p>
+<button id="backToDetails" class="addbtn" type="button" style="width:100%;margin-top:8px">Back to details</button>
+</div>
+<div id="successView" style="display:none;text-align:center">
+<div class="succTick">&#10003;</div>
+<h4 style="color:#15803D;font-size:20px">Order placed</h4>
+<p>Your order ID is <b id="succOid"></b></p>
+<div id="succSummary" class="sumb" style="text-align:left"></div>
+<p style="font-size:14.5px;text-align:left">What happens next: we verify your payment, then your item is cleansed and energised as per tradition, checked piece by piece and packed with care, and dispatched through Shiprocket — tracking is shared by email. Dispatch within 1–2 working days; delivery usually 3–7 working days across India (estimate).</p>
+<p id="succMail" style="display:none;font-size:14.5px;text-align:left">To complete your order, please email your payment screenshot with your name and full delivery address to sacredrudra@gmail.com.</p>
+<button id="succClose" class="btn" type="button" style="width:100%;margin-top:8px">Continue Shopping</button>
+</div>
 </div>
 <script>/**
  * Minified by jsDelivr using Terser v5.37.0.
@@ -221,6 +285,8 @@ var SLABS = [[4000,10],[1999,8],[999,6],[0,4]];
 var STORE_LIVE = true;
 var UPI_ID = 'therudrasacred@slc';
 var payMode = 'full';
+var ORDER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwmbmCo6vHSYEtxIVLutOKaRruoHLGHPBow-nEeSflufP1RBdrXagvXML1wWr7ezxPK/exec';
+var coDetails = {};
 function upiUrl(amt, note){ return 'upi://pay?pa=' + UPI_ID + '&pn=' + encodeURIComponent('Rudra Sacred') + '&am=' + amt + '&cu=INR&tn=' + encodeURIComponent(note || 'Rudra Sacred order'); }
 function drawQr(el, text){ if (!el || typeof qrcode === 'undefined') return; try { var qr = qrcode(0, 'M'); qr.addData(text); qr.make(); el.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4, scalable: true }); } catch(e){ el.innerHTML = ''; } }
 function slabPct(t){ for (var i=0;i<SLABS.length;i++){ if (t>=SLABS[i][0]) return SLABS[i][1]; } return 4; }
@@ -242,23 +308,29 @@ function renderCart(){
   el = document.getElementById('cartDisc'); if (el) el.textContent = '− ₹' + disc.toLocaleString('en-IN') + ' (' + pct + '%)';
   el = document.getElementById('cartPrepaid'); if (el) el.textContent = '₹' + (sub - disc).toLocaleString('en-IN');
   el = document.getElementById('cartCod'); if (el) el.textContent = sub ? ('₹' + sub.toLocaleString('en-IN') + ' total') : '₹0';
-  var ubox = document.getElementById('upiBox');
-  if (ubox){ if (STORE_LIVE && sub > 0){ ubox.style.display = 'block';
-      var uamt = payMode === 'cod' ? 49 : (sub - disc);
-      var unote = payMode === 'cod' ? 'Rudra Sacred COD advance' : 'Rudra Sacred order';
-      drawQr(document.getElementById('upiQr'), upiUrl(uamt, unote));
-      var ual = document.getElementById('upiAmtLine'); if (ual) ual.innerHTML = payMode === 'cod' ? 'COD advance: <b>₹49</b> (balance ₹' + (sub - 49).toLocaleString('en-IN') + ' on delivery)' : 'Prepaid total: <b>₹' + uamt.toLocaleString('en-IN') + '</b>';
-      var upb = document.getElementById('upiPayBtn'); if (upb){ upb.href = upiUrl(uamt, unote); upb.textContent = 'Pay ₹' + uamt.toLocaleString('en-IN') + ' with UPI app'; }
-      var umb = document.getElementById('upiModeBtn'); if (umb) umb.textContent = payMode === 'cod' ? 'Pay the full prepaid amount instead' : 'Pay only the ₹49 COD advance instead';
-    } else { ubox.style.display = 'none'; } }
+  var sb = document.getElementById('stickyBar');
+  if (sb){ var drw = document.getElementById('cartDrawer'); var isOpen = drw && drw.classList.contains('open');
+    if (n > 0 && !isOpen){ sb.hidden = false; var sbt = document.getElementById('sbText'); if (sbt) sbt.textContent = n + (n === 1 ? ' item' : ' items') + ' · ₹' + (sub - disc).toLocaleString('en-IN') + ' prepaid'; } else { sb.hidden = true; } }
+  var sp = document.getElementById('slabProg');
+  if (sp){ if (sub > 0){ sp.style.display = 'block'; var sfill = document.getElementById('spFill'), stxt = document.getElementById('spText');
+      if (sub >= 4000){ if (sfill) sfill.style.width = '100%'; if (stxt) stxt.textContent = 'Top slab unlocked — 10% OFF applied on prepaid orders.'; }
+      else { var NX = [[999, 6], [1999, 8], [4000, 10]], nx = NX[2];
+        for (var q = 0; q < NX.length; q++){ if (sub < NX[q][0]){ nx = NX[q]; break; } }
+        if (sfill) sfill.style.width = Math.min(100, Math.round(sub / nx[0] * 100)) + '%';
+        if (stxt) stxt.textContent = 'Add ₹' + (nx[0] - sub).toLocaleString('en-IN') + ' more to unlock ' + nx[1] + '% OFF on prepaid orders.'; } }
+    else { sp.style.display = 'none'; } }
+  var stps = document.querySelectorAll('[data-stepper]');
+  for (var s2 = 0; s2 < stps.length; s2++){ var sl2 = stps[s2].getAttribute('data-stepper'), q2 = c[sl2] || 0;
+    stps[s2].hidden = !(q2 > 0); var bv = stps[s2].querySelector('.sqv'); if (bv) bv.textContent = q2;
+    var ab = stps[s2].parentElement ? stps[s2].parentElement.querySelector('.addbtn') : null; if (ab) ab.style.display = q2 > 0 ? 'none' : ''; }
   var bump = document.getElementById('cartBump');
   if (bump){ bump.innerHTML = '';
     outer: for (var i=0;i<keys.length;i++){ var pairs = PAIRMAP[keys[i]] || [];
       for (var j=0;j<pairs.length;j++){ var pair = pairs[j];
         if (!c[pair] && PRICEBOOK[pair]){ bump.innerHTML = '<div class="bumpbox"><span class="slabtag">CART BUMP — COMPLETE THE UPAY</span><p style="font-size:14.5px;margin-top:4px"><b>' + PRICEBOOK[pair][0] + '</b> — ₹' + PRICEBOOK[pair][1].toLocaleString('en-IN') + '. Traditionally paired with your item.</p><button class="addbtn" data-slug="' + pair + '">Add This Too</button></div>'; break outer; } } } }
 }
-function openCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.add('open'); }
-function closeCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.remove('open'); }
+function openCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.add('open'); var sb2 = document.getElementById('stickyBar'); if (sb2) sb2.hidden = true; }
+function closeCart(){ var d = document.getElementById('cartDrawer'); if (d) d.classList.remove('open'); renderCart(); }
 document.addEventListener('click', function(e){
   if (e.target.closest('#cartChip')){ renderCart(); openCart(); return; }
   if (e.target.closest('#cartClose')){ closeCart(); return; }
@@ -270,6 +342,60 @@ document.addEventListener('click', function(e){
   var um = e.target.closest('#upiModeBtn'); if (um){ payMode = (payMode === 'cod') ? 'full' : 'cod'; renderCart(); return; }
   if (e.target.closest('#cartClear')){ clearCart(); return; }
   var b = e.target.closest('.addbtn[data-slug]'); if (b){ addToCart(b.getAttribute('data-slug')); }
+});
+function showView(v){
+  var views = {cart: 'cartView', details: 'detailsView', pay: 'payView', success: 'successView'};
+  for (var k in views){ var el = document.getElementById(views[k]); if (el) el.style.display = (k === v) ? 'block' : 'none'; }
+  var dr = document.getElementById('cartDrawer'); if (dr) dr.scrollTop = 0;
+}
+function cartTotals(){ var c = getCart(), sub = 0; Object.keys(c).forEach(function(k){ var it = PRICEBOOK[k]; if (it) sub += it[1] * c[k]; }); var pct = slabPct(sub), disc = Math.round(sub * pct / 100); return {sub: sub, pct: pct, disc: disc}; }
+function renderPay(){
+  var c = getCart(), t = cartTotals(), lines = '';
+  Object.keys(c).forEach(function(k){ var it = PRICEBOOK[k]; if (it) lines += '<div class="crow"><span>' + it[0] + ' × ' + c[k] + '</span><b>₹' + (it[1] * c[k]).toLocaleString('en-IN') + '</b></div>'; });
+  var cod = payMode === 'cod';
+  lines += '<div class="crow"><span>Subtotal</span><b>₹' + t.sub.toLocaleString('en-IN') + '</b></div>';
+  if (!cod) lines += '<div class="crow"><span>Prepaid discount (' + t.pct + '%)</span><b>− ₹' + t.disc.toLocaleString('en-IN') + '</b></div>';
+  lines += '<div class="crow"><span><b>' + (cod ? 'Total (balance on delivery, after the advance)' : 'Total to pay') + '</b></span><b>₹' + (cod ? t.sub : (t.sub - t.disc)).toLocaleString('en-IN') + '</b></div>';
+  var ps = document.getElementById('paySummary'); if (ps) ps.innerHTML = lines;
+  var amt = cod ? 49 : (t.sub - t.disc);
+  drawQr(document.getElementById('payQr'), upiUrl(amt, cod ? 'Rudra Sacred COD advance' : 'Rudra Sacred order'));
+  var pa = document.getElementById('payAmt'); if (pa) pa.textContent = '₹' + amt.toLocaleString('en-IN');
+  var pn = document.getElementById('payNote'); if (pn) pn.innerHTML = cod ? 'Pay the <b>₹49 advance</b> now in your UPI app. The balance of ₹' + (t.sub - 49).toLocaleString('en-IN') + ' is paid in cash when your order arrives.' : 'Pay the exact amount in your UPI app — GPay, PhonePe, Paytm or any UPI app.';
+  var pb = document.getElementById('payBtn'); if (pb){ pb.href = upiUrl(amt, cod ? 'Rudra Sacred COD advance' : 'Rudra Sacred order'); pb.textContent = 'Pay ₹' + amt.toLocaleString('en-IN') + ' with UPI app'; }
+  var mp = document.getElementById('mPrepaid'), mc = document.getElementById('mCod');
+  if (mp) mp.classList.toggle('on', !cod); if (mc) mc.classList.toggle('on', cod);
+}
+document.addEventListener('click', function(e){
+  if (e.target.closest('#sbBtn')){ renderCart(); openCart(); return; }
+  if (e.target.closest('#toDetails')){ if (!Object.keys(getCart()).length) return; showView('details'); return; }
+  if (e.target.closest('#backToCart')){ showView('cart'); return; }
+  if (e.target.closest('#backToDetails')){ showView('details'); return; }
+  if (e.target.closest('#mPrepaid')){ payMode = 'full'; renderPay(); return; }
+  if (e.target.closest('#mCod')){ payMode = 'cod'; renderPay(); return; }
+  if (e.target.closest('#toPayment')){
+    var name = document.getElementById('fName').value.trim(), phone = document.getElementById('fPhone').value.replace(/\D/g, ''), email = document.getElementById('fEmail').value.trim(), addr = document.getElementById('fAddr').value.trim(), pin = document.getElementById('fPin').value.replace(/\D/g, '');
+    var err = '';
+    if (name.length < 3) err = 'Please enter your full name.';
+    else if (phone.length !== 10) err = 'Please enter a 10-digit mobile number.';
+    else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) err = 'Please enter a valid email address.';
+    else if (addr.length < 12) err = 'Please enter your full delivery address.';
+    else if (pin.length !== 6) err = 'Please enter a 6-digit pincode.';
+    var fe = document.getElementById('fErr');
+    if (err){ if (fe){ fe.textContent = err; fe.style.display = 'block'; } return; }
+    if (fe) fe.style.display = 'none';
+    coDetails = {name: name, phone: phone, email: email, address: addr, pincode: pin};
+    renderPay(); showView('pay'); return; }
+  if (e.target.closest('#placeOrder')){
+    var c = getCart(), t = cartTotals(), cod = payMode === 'cod';
+    var items = Object.keys(c).map(function(k){ var it = PRICEBOOK[k]; return it ? (it[0] + ' × ' + c[k]) : ''; }).filter(Boolean).join('\n');
+    var oid = 'RS' + Date.now();
+    var payload = {oid: oid, name: coDetails.name || '', phone: coDetails.phone || '', email: coDetails.email || '', address: coDetails.address || '', pincode: coDetails.pincode || '', items: items, subtotal: t.sub, discount: cod ? 0 : t.disc, total: cod ? t.sub : (t.sub - t.disc), method: cod ? 'COD' : 'Prepaid UPI', utr: (document.getElementById('fUtr').value || '').trim()};
+    if (ORDER_ENDPOINT){ try { fetch(ORDER_ENDPOINT, {method: 'POST', mode: 'no-cors', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)}); } catch (err2){} }
+    var so = document.getElementById('succOid'); if (so) so.textContent = oid;
+    var ss = document.getElementById('succSummary'); if (ss) ss.innerHTML = '<div class="crow"><span>Items</span><b>' + items.replace(/\n/g, '<br>') + '</b></div><div class="crow"><span>Payment</span><b>' + payload.method + '</b></div><div class="crow"><span>Total</span><b>₹' + payload.total.toLocaleString('en-IN') + '</b></div>';
+    var sm = document.getElementById('succMail'); if (sm) sm.style.display = ORDER_ENDPOINT ? 'none' : 'block';
+    clearCart(); showView('success'); return; }
+  if (e.target.closest('#succClose')){ closeCart(); showView('cart'); return; }
 });
 document.addEventListener('DOMContentLoaded', function(){ renderCart(); if (STORE_LIVE){ var qs = document.querySelectorAll('.ppqr'); for (var i = 0; i < qs.length; i++){ drawQr(qs[i], upiUrl(parseInt(qs[i].getAttribute('data-amt'), 10), qs[i].getAttribute('data-note'))); } } });
 </script>

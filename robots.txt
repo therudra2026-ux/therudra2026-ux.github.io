@@ -1,3 +1,1 @@
-User-agent: *
-Allow: /
-Sitemap: https://rudrasacred.in/sitemap.xml
+User-agent: *\nAllow: /\nSitemap: https://rudrasacred.in/sitemap.xml\n
