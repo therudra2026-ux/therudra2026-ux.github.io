@@ -214,11 +214,11 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 <div class="crow"><span>Subtotal</span><b id="cartSub">₹0</b></div>
 <div class="crow"><span>Prepaid discount</span><b id="cartDisc">− ₹0</b></div>
 <div class="crow"><span><b>Pay prepaid (UPI)</b></span><b id="cartPrepaid">₹0</b></div>
-<div class="crow"><span>Or Cash on Delivery — ₹49 advance, balance on delivery</span><b id="cartCod">₹0</b></div>
+<div class="crow" id="cartCodRow"><span>Or Cash on Delivery — ₹49 advance, balance on delivery</span><b id="cartCod">₹0</b></div>
 </div>
 <button id="cartClear" class="btn btn-off" style="margin-top:10px;width:100%">Clear Cart</button>
 <button id="toDetails" class="btn" type="button" style="margin-top:12px;width:100%">Proceed to Checkout</button>
-<p class="trustline">&#10003; COD Available &middot; &#10003; GST invoice &middot; &#10003; Tracking on every order</p>
+<p class="trustline" id="cartTrustline">&#10003; COD Available &middot; &#10003; GST invoice &middot; &#10003; Tracking on every order</p>
 </div>
 <div id="detailsView" style="display:none">
 <h4 class="costep">Step 1 of 2 — Your details</h4>
@@ -292,6 +292,8 @@ var payMode = 'full';
 var ORDER_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwmbmCo6vHSYEtxIVLutOKaRruoHLGHPBow-nEeSflufP1RBdrXagvXML1wWr7ezxPK/exec';
 var UPI_ID = 'therudrasacred@slc';
 var COD_ADVANCE = 49;
+var COD_MAX_PRICE = 2000;
+function codAllowed(){ var c = getCart(); for (var k in c){ var it = PRICEBOOK[k]; if (it && it[1] > COD_MAX_PRICE) return false; } return true; }
 var placedOrder = null;
 var coDetails = {};
 function upiUrl(amt, oid){ return 'upi://pay?pa=' + UPI_ID + '&pn=' + encodeURIComponent('Rudra Sacred') + '&am=' + amt + '&cu=INR&tn=' + encodeURIComponent(oid); }
@@ -304,6 +306,9 @@ function remItem(slug){ var c = getCart(); delete c[slug]; setCart(c); }
 function clearCart(){ setCart({}); }
 function renderCart(){
   var c = getCart(), keys = Object.keys(c), items = document.getElementById('cartItems'), sub = 0, n = 0, html = '';
+  if (!codAllowed()) payMode = 'full';
+  var cr = document.getElementById('cartCodRow'); if (cr) cr.style.display = codAllowed() ? '' : 'none';
+  var ct = document.getElementById('cartTrustline'); if (ct) ct.innerHTML = codAllowed() ? '&#10003; COD Available &middot; &#10003; GST invoice &middot; &#10003; Tracking on every order' : '&#10003; GST invoice &middot; &#10003; Tracking on every order';
   keys.forEach(function(k){ var it = PRICEBOOK[k]; if(!it) return; var line = it[1] * c[k]; sub += line; n += c[k];
     html += '<div class="citem"><span class="cname">' + it[0] + '</span><span class="qctl"><button class="qbtn" data-dec="' + k + '" aria-label="Decrease quantity">&minus;</button><b>' + c[k] + '</b><button class="qbtn" data-inc="' + k + '" aria-label="Increase quantity">+</button><button class="qbtn" data-rem="' + k + '" aria-label="Remove item">&times;</button></span><b>₹' + line.toLocaleString('en-IN') + '</b></div>'; });
   if (!keys.length) html = '<p style="font-size:14px;color:#5A5170">Cart is empty. Add any product with the Add to Cart buttons.</p>';
@@ -366,6 +371,7 @@ function renderPay(){
   var c = getCart(), t = cartTotals(), lines = '';
   Object.keys(c).forEach(function(k){ var it = PRICEBOOK[k]; if (it) lines += '<div class="crow"><span>' + it[0] + ' × ' + c[k] + '</span><b>₹' + (it[1] * c[k]).toLocaleString('en-IN') + '</b></div>'; });
   var cod = payMode === 'cod';
+  if (!codAllowed()){ payMode = 'full'; cod = false; }
   lines += '<div class="crow"><span>Subtotal</span><b>₹' + t.sub.toLocaleString('en-IN') + '</b></div>';
   if (!cod) lines += '<div class="crow"><span>Prepaid discount (' + t.pct + '%)</span><b>− ₹' + t.disc.toLocaleString('en-IN') + '</b></div>';
   if (cod) lines += '<div class="crow"><span>Advance — pay now by UPI</span><b>₹' + COD_ADVANCE + '</b></div><div class="crow"><span>Balance — pay on delivery</span><b>₹' + Math.max(0, t.sub - COD_ADVANCE).toLocaleString('en-IN') + '</b></div>';
@@ -378,6 +384,7 @@ function renderPay(){
   placedOrder = null;
   var mp = document.getElementById('mPrepaid'), mc = document.getElementById('mCod');
   if (mp) mp.classList.toggle('on', !cod); if (mc) mc.classList.toggle('on', cod);
+  if (mc) mc.style.display = codAllowed() ? '' : 'none';
 }
 document.addEventListener('click', function(e){
   if (e.target.closest('#sbBtn')){ renderCart(); openCart(); return; }
@@ -385,7 +392,7 @@ document.addEventListener('click', function(e){
   if (e.target.closest('#backToCart')){ showView('cart'); return; }
   if (e.target.closest('#backToDetails')){ showView('details'); return; }
   if (e.target.closest('#mPrepaid')){ payMode = 'full'; renderPay(); return; }
-  if (e.target.closest('#mCod')){ payMode = 'cod'; renderPay(); return; }
+  if (e.target.closest('#mCod')){ if (codAllowed()) payMode = 'cod'; renderPay(); return; }
   if (e.target.closest('#toPayment')){
     var name = document.getElementById('fName').value.trim(), phone = document.getElementById('fPhone').value.replace(/\D/g, ''), email = document.getElementById('fEmail').value.trim(), addr = document.getElementById('fAddr').value.trim(), pin = document.getElementById('fPin').value.replace(/\D/g, '');
     var err = '';
@@ -402,7 +409,7 @@ document.addEventListener('click', function(e){
   if (e.target.closest('#placeOrder')){
     var btn = e.target.closest('#placeOrder');
     if (btn.disabled) return;
-    var c = getCart(), t = cartTotals(), cod = payMode === 'cod';
+    var c = getCart(), t = cartTotals(), cod = payMode === 'cod' && codAllowed();
     var items = Object.keys(c).map(function(k){ var it = PRICEBOOK[k]; return it ? (it[0] + ' × ' + c[k]) : ''; }).filter(Boolean).join('\n');
     var oid = 'RS' + Date.now();
     var payable = cod ? t.sub : (t.sub - t.disc);
