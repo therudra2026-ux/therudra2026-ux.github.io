@@ -15,9 +15,10 @@
 .hmc-tab:focus-visible{outline:2px solid #5C1F14;outline-offset:2px}
 .hmc-tab[hidden]{display:none}
 @media(max-width:760px){
-  /* Mobile: a small pill above the bottom bar, so it never covers it. */
-  .hmc-tab{writing-mode:horizontal-tb;top:auto;bottom:76px;right:12px;transform:none;
-    padding:11px 16px;border:1.5px solid #C9A227;border-radius:999px}
+  /* Mobile: stays a vertical side tab on the right edge (owner order
+     13 Nov 2026) — smaller, so it never covers the product cards. */
+  .hmc-tab{top:50%;right:0;transform:translateY(-50%);
+    padding:12px 7px;font-size:12px;border-radius:10px 0 0 10px}
 }
 @media(prefers-reduced-motion:reduce){.hmc-tab{transition:none}}
 .phlink{display:block}
