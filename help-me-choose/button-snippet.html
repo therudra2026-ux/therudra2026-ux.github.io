@@ -1,0 +1,35 @@
+<!-- Help Me Choose side-tab button — Rudra Sacred.
+     HOW TO USE: paste this whole block into any site page just before </body>.
+     It links to /help-me-choose/ and hides itself on that page and while the
+     cart drawer is open. No dependencies; colours match the site
+     (saffron gradient, maroon text, gold border, cream background). -->
+<a class="hmc-tab" href="/help-me-choose/" id="hmcTab">Help me choose</a>
+<style>
+.hmc-tab{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:55;
+  writing-mode:vertical-rl;text-orientation:mixed;
+  background:linear-gradient(180deg,#F97316,#EA580C);color:#fff !important;
+  font-family:Inter,system-ui,'Segoe UI',Arial,sans-serif;font-weight:800;font-size:14.5px;
+  letter-spacing:.4px;text-decoration:none;padding:18px 10px;border:1.5px solid #C9A227;
+  border-right:none;border-radius:12px 0 0 12px;box-shadow:-6px 0 18px rgba(92,31,20,.28)}
+.hmc-tab:hover{background:linear-gradient(180deg,#EA580C,#C2410C)}
+.hmc-tab:focus-visible{outline:2px solid #5C1F14;outline-offset:2px}
+.hmc-tab[hidden]{display:none}
+@media(max-width:760px){
+  /* Mobile: a small pill above the bottom bar, so it never covers it. */
+  .hmc-tab{writing-mode:horizontal-tb;top:auto;bottom:76px;right:12px;transform:none;
+    padding:11px 16px;border:1.5px solid #C9A227;border-radius:999px}
+}
+@media(prefers-reduced-motion:reduce){.hmc-tab{transition:none}}
+.phlink{display:block}
+.pcard h3 a,.feat h3 a{color:inherit;text-decoration:none}
+.pcard h3 a:hover,.feat h3 a:hover{text-decoration:underline}
+</style>
+<script>
+(function(){
+  var tab=document.getElementById("hmcTab");if(!tab)return;
+  if(window.location.pathname.indexOf("/help-me-choose")!==-1){tab.hidden=true;return;}
+  var drw=document.getElementById("cartDrawer");
+  if(drw){new MutationObserver(function(){tab.hidden=drw.classList.contains("open");})
+    .observe(drw,{attributes:true,attributeFilter:["class"]});}
+})();
+</script>
