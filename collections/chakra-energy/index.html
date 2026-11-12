@@ -224,12 +224,12 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 </div>
 <div id="detailsView" style="display:none">
 <h4 class="costep">Step 1 of 2 — Your details</h4>
+<p id="fErr" style="display:none;color:#B3261E;font-size:13.5px"></p>
 <label>Full name<input id="fName" type="text" autocomplete="name"></label>
 <label>Mobile number<input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel"></label>
 <label>Email<input id="fEmail" type="email" autocomplete="email"></label>
 <label>Full delivery address<textarea id="fAddr" rows="3"></textarea></label>
 <label>Pincode<input id="fPin" type="text" inputmode="numeric"></label>
-<p id="fErr" style="display:none;color:#B3261E;font-size:13.5px"></p>
 <button id="toPayment" class="btn" type="button" style="width:100%;margin-top:8px">Continue to Payment</button>
 <button id="backToCart" class="addbtn" type="button" style="width:100%;margin-top:8px">Back to cart</button>
 </div>
@@ -607,7 +607,7 @@ document.addEventListener('click', function(e){
   if (e.target.closest('#mPrepaid')){ payMode = 'full'; renderPay(); return; }
   if (e.target.closest('#mCod')){ if (codAllowed()) payMode = 'cod'; renderPay(); return; }
   if (e.target.closest('#toPayment')){
-    var name = document.getElementById('fName').value.trim(), phone = document.getElementById('fPhone').value.replace(/\D/g, ''), email = document.getElementById('fEmail').value.trim(), addr = document.getElementById('fAddr').value.trim(), pin = document.getElementById('fPin').value.replace(/\D/g, '');
+    var name = document.getElementById('fName').value.trim(), phone = document.getElementById('fPhone').value.replace(/\D/g, '').replace(/^91(?=\d{10}$)/, '').replace(/^0(?=\d{10}$)/, ''), email = document.getElementById('fEmail').value.trim(), addr = document.getElementById('fAddr').value.trim(), pin = document.getElementById('fPin').value.replace(/\D/g, '');
     var err = '';
     if (name.length < 3) err = 'Please enter your full name.';
     else if (phone.length !== 10) err = 'Please enter a 10-digit mobile number.';
