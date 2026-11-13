@@ -1,0 +1,29 @@
+<!doctype html><meta charset=utf-8><title>M7 harness</title>
+<h1>M7 harness</h1>
+<textarea id=p rows=12 cols=110></textarea><br>
+<button id=go>POST JSON</button> <span id=st></span>
+<pre id=out style="white-space:pre-wrap;word-break:break-word"></pre>
+<hr><h2>PayU form (new tab)</h2>
+<form id=f action="https://script.google.com/macros/s/AKfycbwmbmCo6vHSYEtxIVLutOKaRruoHLGHPBow-nEeSflufP1RBdrXagvXML1wWr7ezxPK/exec" method="POST" target="_blank">
+mode <input name=mode value=payu_create> purpose <input name=purpose value=cod_advance><br>
+oid <input name=oid id=oid size=32 value="RSTEST-M7-S-20261113-01"> txnid <input name=txnid id=txnid size=42><br>
+name <input name=name value=Test> phone <input name=phone value=9876543210> email <input name=email size=28 value=therudra2026@gmail.com><br>
+total <input name=total value=699> order_total <input name=order_total value=699><br>
+<input type=submit value="Go to PayU">
+</form>
+<script>
+const EP='https://script.google.com/macros/s/AKfycbwmbmCo6vHSYEtxIVLutOKaRruoHLGHPBow-nEeSflufP1RBdrXagvXML1wWr7ezxPK/exec';
+const base={name:'Test',phone:'9876543210',email:'therudra2026@gmail.com',address:'Test Address, Barrackpore',pincode:'700121'};
+function cod(oid){return {mode:'cod',oid:oid,...base,items:'Test product \u2014 M7',subtotal:699,discount:0,total:699,method:'COD',utr:'123456789012'};}
+function cre(oid){return {mode:'payu_create',purpose:'cod_advance',oid:oid,name:'Test',phone:'9876543210',email:'therudra2026@gmail.com',total:699,order_total:699};}
+function sta(oid,tx){return {mode:'payu_status',oid:oid,txnid:tx};}
+window.P={codS:cod('RSTEST-M7-S-20261113-01'),codF:cod('RSTEST-M7-F-20261113-01'),codA:cod('RSTEST-M7-A-20261113-01'),creS:cre('RSTEST-M7-S-20261113-01'),creF:cre('RSTEST-M7-F-20261113-01'),creA:cre('RSTEST-M7-A-20261113-01')};
+const q=new URLSearchParams(location.search); const pr=q.get('preset');
+if(pr&&P[pr]) document.getElementById('p').value=JSON.stringify(P[pr],null,2);
+if(q.get('oid')) document.getElementById('oid').value=q.get('oid');
+if(q.get('txnid')) document.getElementById('txnid').value=q.get('txnid');
+if(q.get('status')) document.getElementById('p').value=JSON.stringify(sta(q.get('oid')||'RSTEST-M7-S-20261113-01',q.get('txnid')||''),null,2);
+document.getElementById('go').onclick=async()=>{const o=document.getElementById('out');o.textContent='posting...';try{let r=await fetch(EP,{method:'POST',headers:{'Content-Type':'text/plain'},body:document.getElementById('p').value});let t=await r.text();o.textContent='HTTP '+r.status+'\n'+t;}catch(e){o.textContent='ERR '+e;}};
+if(q.get('auto')==='1') document.getElementById('go').click();
+</script>
+
