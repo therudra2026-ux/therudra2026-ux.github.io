@@ -408,7 +408,7 @@ document.addEventListener('error', function(e){
     var cod = box.getAttribute('data-cod') === 'yes'
       ? 'Cash on Delivery is available for this product.'
       : 'Cash on Delivery is not available for this product \u2014 prepaid (UPI) only.';
-    msg.textContent = 'Delivery available to ' + pin + ' \u2014 dispatch in 1\u20132 working days, delivery in 3\u20137 days. Shipping is FREE. ' + cod;
+    msg.textContent = 'Delivery available to ' + pin + ' \u2014 dispatch in 1\u20132 working days, delivery in 5\u20137 days. Shipping is FREE. ' + cod;
   });
   document.addEventListener('click', function(e){
     var t = e.target;
@@ -620,7 +620,7 @@ if (pinBtn) pinBtn.addEventListener('click', function(){
   var v = inp.value.trim();
   if (!/^[1-9][0-9]{5}$/.test(v)) { msg.textContent = 'Enter a valid 6-digit pincode.'; return; }
   var cod = (typeof codAllowed === 'function') ? codAllowed() : true;
-  msg.textContent = 'Delivery available — dispatch in 1–2 working days, delivery in 3–7 days. Shipping is FREE. ' +
+  msg.textContent = 'Delivery available — delivery in 5–7 days. Shipping is FREE. ' +
     (cod ? 'Cash on Delivery is available for this order.' : 'Cash on Delivery is not available for this order — prepaid (UPI) only.');
 });
 })();
