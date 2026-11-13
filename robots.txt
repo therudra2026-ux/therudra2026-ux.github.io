@@ -1,1 +1,5 @@
-User-agent: *\nAllow: /\nSitemap: https://rudrasacred.in/sitemap.xml\n
+User-agent: *
+Allow: /
+Disallow: /build-your-combo/?add=
+Disallow: /products/zodiac-rashi-bracelet/?rashi=
+Sitemap: https://rudrasacred.in/sitemap.xml
