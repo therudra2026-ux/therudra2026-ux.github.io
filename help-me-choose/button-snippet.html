@@ -15,10 +15,10 @@
 .hmc-tab:focus-visible{outline:2px solid #5C1F14;outline-offset:2px}
 .hmc-tab[hidden]{display:none}
 @media(max-width:760px){
-  /* Mobile: stays a vertical side tab on the right edge (owner order
-     13 Nov 2026) — smaller, so it never covers the product cards. */
-  .hmc-tab{top:50%;right:0;transform:translateY(-50%);
-    padding:12px 7px;font-size:12px;border-radius:10px 0 0 10px}
+  /* Mobile: an inset floating pill (owner order
+     13 Nov 2026 — the flush right-edge tab read as cut off on his phone). */
+  .hmc-tab{top:50%;right:8px;transform:translateY(-50%);
+    padding:12px 7px;font-size:12px;border:1.5px solid #C9A227;border-radius:10px}
 }
 @media(prefers-reduced-motion:reduce){.hmc-tab{transition:none}}
 .phlink{display:block}
