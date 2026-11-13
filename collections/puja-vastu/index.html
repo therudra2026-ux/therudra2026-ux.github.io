@@ -235,10 +235,11 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 <div id="detailsSummary" class="sumb"></div>
 <p id="fErr" style="display:none;color:#B3261E;font-size:13.5px"></p>
 <label>Full name<input id="fName" type="text" autocomplete="name"></label>
+<label>Pincode<input id="fPin" type="tel" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" placeholder="700122" autocomplete="postal-code"></label>
 <label>Mobile number<input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel"></label>
 <label>Email<input id="fEmail" type="email" autocomplete="email"></label>
-<label>Full delivery address<textarea id="fAddr" rows="3"></textarea></label>
-<label>Pincode<input id="fPin" type="text" inputmode="numeric"></label>
+<label>Full delivery address<textarea id="fAddr" rows="3" autocomplete="street-address"></textarea></label>
+<script>(function(){var p=document.getElementById('fPin'),a=document.getElementById('fAddr');function clean(){if(!p)return;var v=p.value.replace(/\D/g,'').slice(0,6);if(p.value!==v)p.value=v;}if(p){p.addEventListener('input',clean);p.addEventListener('focus',clean);clean();}if(a&&p){a.addEventListener('input',function(){if(p.value)return;var m=a.value.match(/\b[1-9][0-9]{5}\b/);if(m)p.value=m[0];});}})();</script>
 <button id="toPayment" class="btn" type="button" style="width:100%;margin-top:8px">Continue to Payment</button>
 <button id="backToCart" class="addbtn" type="button" style="width:100%;margin-top:8px">Back to cart</button>
 </div>
