@@ -529,7 +529,7 @@ if (pinBtn) pinBtn.addEventListener('click', function(){
   var v = inp.value.trim();
   if (!/^[1-9][0-9]{5}$/.test(v)) { msg.textContent = 'Enter a valid 6-digit pincode.'; return; }
   var cod = (typeof codAllowed === 'function') ? codAllowed() : true;
-  msg.textContent = 'Delivery available — dispatch in 1–2 working days, delivery in 3–7 days. Shipping is FREE. ' +
+  msg.textContent = 'Delivery available — delivery in 5–7 days. Shipping is FREE. ' +
     (cod ? 'Cash on Delivery is available for this order.' : 'Cash on Delivery is not available for this order — prepaid (UPI) only.');
 });
 })();
