@@ -1,0 +1,45 @@
+# Rudra Sacred — llms.txt
+# A short guide to rudrasacred.in for AI search and assistants.
+# English only. All facts below are as stated on the site itself.
+
+## About
+Rudra Sacred (rudrasacred.in) is an Indian online store for rudraksha beads,
+malas, crystals, bracelets and traditional puja essentials. The store is run
+by a direct manufacturer: products are made, checked and prepared in-house,
+kept in stock, and energised as per tradition before dispatch. Orders ship
+across India with free shipping. Secure payments by UPI, cards and net
+banking; cash on delivery is available on eligible orders. Prices are shown
+in INR, inclusive of all taxes. No outcome or benefit is guaranteed for any
+product; traditional associations are described as matters of belief.
+
+## Main pages
+- Home: https://rudrasacred.in/
+- Shop all products: https://rudrasacred.in/shop/
+- Find your stone (birth-date calculator): https://rudrasacred.in/find-your-stone/
+- Help me choose (guided quiz): https://rudrasacred.in/help-me-choose/
+- Build your own combo: https://rudrasacred.in/build-your-combo/
+- Product guides (blog): https://rudrasacred.in/blog/
+- About: https://rudrasacred.in/about/
+- Shipping: https://rudrasacred.in/shipping/
+- Returns: https://rudrasacred.in/returns/
+- Privacy: https://rudrasacred.in/privacy/
+- Terms: https://rudrasacred.in/terms/
+- Contact: https://rudrasacred.in/contact/
+
+## Product families
+- Rudraksha (1 to 14 Mukhi and Gauri Shankar): https://rudrasacred.in/collections/rudraksha/
+- Malas: https://rudrasacred.in/collections/malas-rudraksha/
+- Crystal bracelets: https://rudrasacred.in/collections/crystal-bracelets/
+- Dhan Yog bracelets: https://rudrasacred.in/products/dhan-yog-bracelet/
+- Zodiac (Rashi) bracelets: https://rudrasacred.in/products/zodiac-rashi-bracelet/
+- Pujan boxes and kits: https://rudrasacred.in/collections/wealth-prosperity/
+
+## Product pages
+Every product has its own page under https://rudrasacred.in/products/<slug>/,
+with its name, price, contents, specifications and a certificate of
+authenticity image. Product data is also published as JSON-LD (Product and
+Offer schema) on each product page.
+
+## Contact
+- Email: sacredrudra@gmail.com
+- Address: 16/A, 28 Sadhu Mukherjee Road, Jafarpur, Barrackpore, West Bengal 700122, India
