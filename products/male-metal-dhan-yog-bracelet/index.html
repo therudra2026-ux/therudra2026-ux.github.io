@@ -186,9 +186,13 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 .pcard h3 a:hover,.feat h3 a:hover{text-decoration:underline}
 </style><style>
 /* ===== Redesign V2 (staging) — hero slider, rails, tabs, video, motion ===== */
-.hslider{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 24px 44px rgba(92,31,20,.20),0 4px 12px rgba(92,31,20,.10);margin:18px 0 6px}
-.hslide{display:none;position:relative}
-.hslide.on{display:block}
+/* Fix round 3 (13 Nov 2026, owner: hero must feel like Japam — swipeable by
+   hand AND auto-scrolling, smooth). The hero is a TRACK slider: slides sit
+   side by side and the track translates — no display:none hard cut. */
+.hslider{position:relative;overflow:hidden;border-radius:0;box-shadow:0 24px 44px rgba(92,31,20,.20),0 4px 12px rgba(92,31,20,.10);margin:18px 0 6px}
+.hstrack{display:flex;transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform;touch-action:pan-y}
+.hslide{flex:0 0 100%;position:relative;min-width:0}
+.hslider .hslide{display:block}
 .hslide img{width:100%;height:420px;object-fit:cover;display:block}
 .hslide.kb img{animation:kbZoom 14s ease-in-out infinite alternate}
 @keyframes kbZoom{from{transform:scale(1)}to{transform:scale(1.09)}}
@@ -259,7 +263,27 @@ table.cmp caption{caption-side:top;text-align:left;font-family:'Playfair Display
 #v2buybar .btn{width:auto;padding:12px 20px;font-size:15px}
 @media(min-width:900px){#v2buybar{left:auto;right:22px;bottom:22px;width:380px;border:1.5px solid #C9A227;border-radius:16px;box-shadow:0 16px 34px rgba(92,31,20,.22)}}
 @media(max-width:760px){#v2buybar .nm{display:none}}
-/* Deeper visible sway (owner order: motion must read on phone too) */
+/* Fix round 3 (13 Nov 2026, owner: tiles must look like Japam — natural square
+   stone images, NEVER trapped in round frames/circles). These rules use the
+   .tiles qualifier so they beat the live picker's circular rules in every
+   file, even where the older V2_CSS copy is stale. */
+.crystal-picker .tiles .gtile img{width:88px;height:88px;border-radius:12px;aspect-ratio:auto;object-fit:cover;display:block;margin:0 auto;box-shadow:0 4px 10px rgba(92,31,20,.22);border:1.5px solid #E3D3AC}
+.crystal-picker .tiles .gtile{width:96px}
+.crystal-picker .tiles #crystal-viewall{width:96px}
+.crystal-picker .tiles #crystal-viewall span:first-child{width:88px;height:88px;border-radius:12px;background:linear-gradient(180deg,#F7C948,#E9A820);color:#5C1F14;font-size:30px;line-height:88px;margin:0 auto;padding:0;box-shadow:0 4px 10px rgba(92,31,20,.22)}
+@media(max-width:760px){.crystal-picker .tiles .gtile{width:84px}.crystal-picker .tiles .gtile img{width:76px;height:76px}.crystal-picker .tiles #crystal-viewall{width:84px}.crystal-picker .tiles #crystal-viewall span:first-child{width:76px;height:76px;line-height:76px;font-size:26px}}
+/* Fix round 3: the fixed bottom bars (#g10mbar / #v2buybar) covered the last
+   ~67px of PDP footers on phones. Reserve that space on mobile. */
+@media(max-width:900px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom, 0px))}}
+/* Fix round 3: the hero sits at the very top (no top padding) and the h1 +
+   intro + chips live BELOW the slider in a slim centred intro block, so the
+   first screen is the carousel itself — clean, like Japam. */
+.hero{padding-top:0}
+.hero-intro{padding:26px 0 8px;text-align:center}
+.hero-intro h1{font-size:30px}
+.hero-intro p{max-width:640px;margin:10px auto 0;color:var(--ink2,#5A5170)}
+.hero-intro .chips{justify-content:center}
+@media(max-width:760px){.hero-intro{padding:20px 18px 6px}.hero-intro h1{font-size:26px}}
 @keyframes heroSway2{0%,100%{transform:rotateY(-8deg) rotateX(4deg) translateY(0)}50%{transform:rotateY(-3deg) rotateX(1deg) translateY(-12px)}}
 .card3d{animation:heroSway2 6s ease-in-out infinite}
 @keyframes heroSway2M{0%,100%{transform:rotateX(3deg) translateY(0)}50%{transform:rotateX(0deg) translateY(-8px)}}
@@ -395,8 +419,30 @@ h1{font-size:24px!important}
 .gtile img{height:120px}
 .gtile span{font-size:15px}
 }
+</style><style id="r3">
+
+/* Fix round 3 (13 Nov 2026) — Japam-like hero, square stone tiles, mobile
+   bottom-bar clearance. Appended after every other style block (id="r3")
+   so it wins over stale copies of the V2 and live CSS. */
+.hslider{border-radius:0}
+.hstrack{display:flex;transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform;touch-action:pan-y}
+.hslide{flex:0 0 100%;position:relative;min-width:0}
+.hslider .hslide{display:block}
+.hero{padding-top:0}
+.hero-intro{padding:26px 0 8px;text-align:center}
+.hero-intro h1{font-size:30px}
+.hero-intro p{max-width:640px;margin:10px auto 0;color:var(--ink2,#5A5170)}
+.hero-intro .chips{justify-content:center}
+.crystal-picker .tiles .gtile img{width:88px;height:88px;border-radius:12px;aspect-ratio:auto;object-fit:cover;display:block;margin:0 auto;box-shadow:0 4px 10px rgba(92,31,20,.22);border:1.5px solid #E3D3AC}
+.crystal-picker .tiles .gtile{width:96px}
+.crystal-picker .tiles #crystal-viewall{width:96px}
+.crystal-picker .tiles #crystal-viewall span:first-child{width:88px;height:88px;border-radius:12px;background:linear-gradient(180deg,#F7C948,#E9A820);color:#5C1F14;font-size:30px;line-height:88px;margin:0 auto;padding:0;box-shadow:0 4px 10px rgba(92,31,20,.22)}
+@media(max-width:760px){.hero .hero-intro{padding:20px 18px 6px}.hero .hero-intro h1{font-size:26px}.crystal-picker .tiles .gtile{width:84px}.crystal-picker .tiles .gtile img{width:76px;height:76px}.crystal-picker .tiles #crystal-viewall{width:84px}.crystal-picker .tiles #crystal-viewall span:first-child{width:76px;height:76px;line-height:76px;font-size:26px}}
+@media(max-width:900px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom, 0px))}}
+@media(prefers-reduced-motion:reduce){.hstrack{transition:none}}
+
 </style></head><body>
-<div class="draftbar" style="background:#FFF3DC;color:#5C1F14;border-bottom:1px solid #C9A227">COD Available · Up to 10% OFF on prepaid orders</div>
+<div class="draftbar" style="background:#FFF3DC;color:#5C1F14;border-bottom:1px solid #C9A227">SAVE UP TO 10% — Instant Prepaid Savings + FREE SHIPPING ON EVERY ORDER</div>
 <header><!-- 10/10 global burger -->
 <button class="g10burger" type="button" id="g10burger" aria-label="Menu" aria-expanded="false" aria-controls="g10nav">&#9776;</button><a class="logo" href="/index.html">RUDRA SACRED</a>
 <nav><a href="/shop/index.html">Shop</a><a href="/blog/index.html">Blog</a><a href="/contact/index.html">Contact</a></nav><!-- 10/10 global search -->
@@ -472,6 +518,7 @@ h1{font-size:24px!important}
 </div>
 <div id="detailsView" style="display:none">
 <h4 class="costep">Step 1 of 2 — Your details</h4>
+<div id="detailsSummary" class="sumb"></div>
 <p id="fErr" style="display:none;color:#B3261E;font-size:13.5px"></p>
 <label>Full name<input id="fName" type="text" autocomplete="name"></label>
 <label>Mobile number<input id="fPhone" type="tel" inputmode="numeric" autocomplete="tel"></label>
@@ -960,6 +1007,7 @@ function renderCart(){
     html += '<div class="citem"><span class="cname">' + it[0] + '</span><span class="qctl"><button class="qbtn" data-dec="' + k + '" aria-label="Decrease quantity">&minus;</button><b>' + c[k] + '</b><button class="qbtn" data-inc="' + k + '" aria-label="Increase quantity">+</button><button class="qbtn" data-rem="' + k + '" aria-label="Remove item">&times;</button></span><b>₹' + line.toLocaleString('en-IN') + '</b></div>'; });
   if (!keys.length) html = '<p style="font-size:14px;color:#5A5170">Cart is empty. Add any product with the Add to Cart buttons.</p>';
   if (items) items.innerHTML = html;
+  var ds = document.getElementById('detailsSummary'); if (ds) ds.innerHTML = html;
   var cnt = document.getElementById('cartCount'); if (cnt) cnt.textContent = n;
   var pct = exit10() ? 10 : slabPct(sub), disc = Math.round(sub * pct / 100), el;
   el = document.getElementById('cartSub'); if (el) el.textContent = '₹' + sub.toLocaleString('en-IN');
@@ -1105,8 +1153,11 @@ document.addEventListener('click', function(e){
   var p = e.target.closest('.v2vid .v2play'); if (!p) return;
   var box = p.closest('.v2vid'), v = box.querySelector('video'); if (!v) return;
   document.querySelectorAll('.v2vid video').forEach(function(o){ if (o !== v && !o.paused){ o.pause(); o.closest('.v2vid').classList.remove('playing'); } });
-  if (!v.getAttribute('src')){ var ds = v.getAttribute('data-src'); if (ds) v.src = ds; }
-  if (v.paused){ v.play().catch(function(){}); box.classList.add('playing'); }
+  if (v.paused){
+    var start = function(){ var pr = v.play(); if (pr && pr.catch) pr.catch(function(){}); box.classList.add('playing'); };
+    if (!v.getAttribute('src')){ var ds = v.getAttribute('data-src'); if (ds){ v.src = ds; if (v.readyState >= 2){ start(); } else { v.addEventListener('canplay', function h(){ v.removeEventListener('canplay', h); start(); }); } } }
+    else { start(); }
+  }
   else { v.pause(); box.classList.remove('playing'); }
 });
 /* Sticky buy bar (Council: Manus) — IntersectionObserver on the buy box, not a
