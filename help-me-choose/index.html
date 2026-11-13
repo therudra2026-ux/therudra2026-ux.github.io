@@ -477,7 +477,7 @@ h1{font-size:24px!important}
 @media(max-width:900px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom, 0px))}}
 @media(prefers-reduced-motion:reduce){.hstrack{transition:none}}
 
-</style></head>
+</style><style>.price .mrp{text-decoration:line-through;color:#8A7B6B;font-size:.85em;margin-right:6px}.price .pctoff{background:#FFD814;color:#5C1F14;font-weight:800;font-size:12px;padding:2px 7px;border-radius:4px;margin-left:6px;white-space:nowrap}</style></head>
 <body><div class="draftbar" style="background:#5C1F14;color:#FFE9C4;border-bottom:1px solid #5C1F14">SAVE UP TO 10% — Instant Prepaid Savings + FREE SHIPPING ON EVERY ORDER</div><div class="ticker"><div class="tk"><span>Vivah Panchami · 14 December 2026</span><span>·</span><span>Mokshada Ekadashi · 20 December 2026</span><span>·</span><span>Free shipping across India</span><span>·</span><span>COD available</span><span>·</span><span>Up to 10% off on prepaid orders</span><span>·</span><span>Vivah Panchami · 14 December 2026</span><span>·</span><span>Mokshada Ekadashi · 20 December 2026</span><span>·</span><span>Free shipping across India</span><span>·</span><span>COD available</span><span>·</span><span>Up to 10% off on prepaid orders</span><span>·</span></div></div><header><!-- 10/10 global burger -->
 <button class="g10burger" type="button" id="g10burger" aria-label="Menu" aria-expanded="false" aria-controls="g10nav">&#9776;</button><a class="logo" href="/">RUDRA SACRED</a><nav><a href="/shop/">Shop</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a></nav><!-- 10/10 global search -->
 <div class="g10search" role="search"><input id="g10searchInput" type="search" placeholder="Search malas, bracelets, crystals..." aria-label="Search products" autocomplete="off"><div class="g10drop" id="g10searchDrop" role="listbox" aria-label="Search results"></div></div></header><!-- 10/10 global nav -->
@@ -1283,7 +1283,7 @@ function card(slug, why){
   return '<div class="pcard"><a class="phlink" href="/products/'+slug+'/"><div class="phimg"><img src="/images/'+p.photo+'" alt="'+p.name+'" loading="lazy"></div></a>'
     + '<div class="in"><h3><a href="/products/'+slug+'/">'+p.name+'</a></h3><p>'+p.short+'</p>'
     + '<div class="price">'+inr(p.price)+' <span class="draftnote">inclusive of all taxes</span></div>'
-    + '<div class="v2pre" style="font-size:15px">'+inr(pp)+' with prepaid UPI'+cod+'</div>'
+    
     + '<p class="qwhy">'+why+'</p>'
     + '<a class="viewlink" href="/products/'+slug+'/">View product</a> '
     + '<span class="addwrap"><button class="addbtn" data-slug="'+slug+'" data-name="'+p.name+'" data-price="'+p.price+'">Add to Cart</button>'
